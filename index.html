@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ANAS RENT CAR - Service de location de voitures de luxe et de prestige. Réservez votre véhicule d'exception au meilleur prix.">
+    <title>ANAS RENT CAR | Location de Voitures de Prestige & Luxe</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo-container" id="logo-link">
+                <!-- Custom SVG replicating the user's logo -->
+                <svg class="logo-svg" viewBox="0 0 200 200" width="60" height="60">
+                    <circle cx="100" cy="100" r="95" fill="#0f0f0f" stroke="url(#gold-gradient)" stroke-width="2"/>
+                    <defs>
+                        <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fdf6e2" />
+                            <stop offset="30%" stop-color="#d4af37" />
+                            <stop offset="70%" stop-color="#aa771c" />
+                            <stop offset="100%" stop-color="#f5e5b8" />
+                        </linearGradient>
+                        <linearGradient id="gold-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#fdf6e2" />
+                            <stop offset="50%" stop-color="#d4af37" />
+                            <stop offset="100%" stop-color="#aa771c" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Car Silhouette Outline -->
+                    <path d="M 55 100 C 60 90, 80 82, 100 82 C 115 82, 130 84, 142 90 C 147 92, 153 96, 155 102 C 152 101, 144 98, 135 100 C 125 102, 110 110, 105 110 C 95 110, 85 105, 80 105" fill="none" stroke="url(#gold-gradient)" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Dynamic Arrow Spoiler -->
+                    <path d="M 142 90 L 155 83 M 155 83 L 150 83 M 155 83 L 155 88" fill="none" stroke="url(#gold-gradient)" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Location Pin on Front Wheel -->
+                    <g transform="translate(68, 100)">
+                        <circle cx="0" cy="0" r="9" fill="none" stroke="url(#gold-gradient)" stroke-width="2"/>
+                        <path d="M 0 -8 C -4 -8, -4 -3, 0 5 C 4 -3, 4 -8, 0 -8 Z" fill="url(#gold-gradient)"/>
+                        <circle cx="0" cy="-4" r="1.5" fill="#0f0f0f"/>
+                    </g>
+                    <!-- Rear Wheel Arc -->
+                    <circle cx="128" cy="100" r="9" fill="none" stroke="url(#gold-gradient)" stroke-width="2"/>
+                    <!-- Text ANAS -->
+                    <text x="100" y="132" font-family="'Playfair Display', serif" font-weight="900" font-size="28" fill="url(#gold-text-grad)" text-anchor="middle" letter-spacing="1">ANAS</text>
+                    <!-- Text RENT CAR -->
+                    <text x="100" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" fill="url(#gold-text-grad)" text-anchor="middle" letter-spacing="3.5">RENT CAR</text>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-title">ANAS</span>
+                    <span class="brand-subtitle">RENT CAR</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Accueil</a>
+                <a href="#fleet" class="nav-link">Notre Flotte</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#testimonials" class="nav-link">Avis</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#fleet" class="btn btn-gold btn-nav">Réserver</a>
+                <!-- Hamburger Menu -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#home" class="mobile-link">Accueil</a>
+        <a href="#fleet" class="mobile-link">Notre Flotte</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#testimonials" class="mobile-link">Avis</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="#fleet" class="btn btn-gold w-full text-center mt-6">Réserver Maintenant</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fa-solid fa-crown gold-color"></i> L'Excellence Automobile</span>
+                <h1 class="hero-title">Louez l'Exceptionnel Avec <span class="gold-gradient-text">ANAS RENT CAR</span></h1>
+                <p class="hero-subtitle">Une flotte exclusive de véhicules de luxe, de sport et de prestige pour sublimer vos trajets et marquer vos événements marquants.</p>
+                <div class="hero-actions">
+                    <a href="#fleet" class="btn btn-gold"><i class="fa-solid fa-car"></i> Découvrir la Flotte</a>
+                    <a href="#services" class="btn btn-outline"><i class="fa-solid fa-circle-info"></i> Nos Services</a>
+                </div>
+            </div>
+
+            <!-- Booking Search Bar (Glassmorphism) -->
+            <div class="booking-search-card">
+                <h3 class="search-card-title"><i class="fa-solid fa-calendar-check gold-color"></i> Trouver une voiture</h3>
+                <form class="search-form" id="hero-search-form">
+                    <div class="form-group">
+                        <label for="pickup-location"><i class="fa-solid fa-location-dot"></i> Lieu de prise en charge</label>
+                        <select id="pickup-location" required>
+                            <option value="" disabled selected>Choisir une ville...</option>
+                            <option value="casablanca">Casablanca</option>
+                            <option value="marrakech">Marrakech</option>
+                            <option value="rabat">Rabat</option>
+                            <option value="tanger">Tanger</option>
+                            <option value="agadir">Agadir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-date"><i class="fa-solid fa-calendar-days"></i> Date de départ</label>
+                        <input type="date" id="pickup-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="return-date"><i class="fa-solid fa-calendar-days"></i> Date de retour</label>
+                        <input type="date" id="return-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="car-category"><i class="fa-solid fa-sliders"></i> Catégorie</label>
+                        <select id="car-category">
+                            <option value="all">Toutes catégories</option>
+                            <option value="sport">Sport & Luxe</option>
+                            <option value="suv">SUV / 4x4</option>
+                            <option value="electric">Électrique</option>
+                            <option value="economy">Économique</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-gold btn-search"><i class="fa-solid fa-magnifying-glass"></i> Rechercher</button>
+                </form>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <a href="#fleet" class="scroll-down">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+        </a>
+    </section>
+
+    <!-- Fleet / Catalog Section -->
+    <section id="fleet" class="fleet-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline">Notre Sélection</span>
+                <h2 class="section-title">Découvrez Notre <span class="gold-gradient-text">Flotte Prestige</span></h2>
+                <p class="section-description">Des berlines élégantes aux supercars rugissantes, trouvez le véhicule idéal adapté à vos exigences.</p>
+            </div>
+
+            <!-- Categories Tabs -->
+            <div class="fleet-tabs">
+                <button class="tab-btn active" data-category="all">Toutes</button>
+                <button class="tab-btn" data-category="sport">Sport & Luxe</button>
+                <button class="tab-btn" data-category="suv">SUV</button>
+                <button class="tab-btn" data-category="electric">Électriques</button>
+                <button class="tab-btn" data-category="economy">Économiques</button>
+            </div>
+
+            <!-- Fleet Cars Grid -->
+            <div class="cars-grid" id="cars-grid">
+                <!-- Dynamically filled by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Why Choose Us Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline">Pourquoi ANAS RENT CAR ?</span>
+                <h2 class="section-title">Une Expérience de Location <span class="gold-gradient-text">Inégalée</span></h2>
+                <p class="section-description">Nous redéfinissons les standards du voyage avec un service attentionné et personnalisé.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="service-title">Flotte Premium Exclusive</h3>
+                    <p class="service-desc">Des véhicules de dernière génération, parfaitement entretenus, révisés et dotés d'options haut de gamme.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="service-title">Assistance VIP 24h/7j</h3>
+                    <p class="service-desc">Notre équipe dédiée est à votre disposition jour et nuit pour répondre à toutes vos demandes et imprévus.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="service-title">Transparence Totale</h3>
+                    <p class="service-desc">Aucun frais caché ni mauvaise surprise. Les prix indiqués incluent l'assurance de base et le kilométrage adapté.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="service-title">Livraison sur Mesure</h3>
+                    <p class="service-desc">Nous vous livrons votre véhicule directement à l'aéroport, à votre hôtel ou à votre domicile, selon vos convenances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section (Luxury background) -->
+    <section class="stats-section">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Véhicules de luxe</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10k+</span>
+                <span class="stat-label">Clients Satisfaits</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5★</span>
+                <span class="stat-label">Note Moyenne Google</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24h</span>
+                <span class="stat-label">Livraison Express</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Customer Reviews -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline">Avis de nos clients</span>
+                <h2 class="section-title">Ce Qu'ils En <span class="gold-gradient-text">Pensent</span></h2>
+                <p class="section-description">Découvrez les retours d'expérience de nos clients VIP et passionnés d'automobile.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Une expérience hors du commun. J'ai loué la Porsche 911 pour mon mariage à Marrakech. Le véhicule était dans un état clinique et la livraison directement à mon hôtel a été d'une fluidité exemplaire. Je recommande ANAS RENT CAR à 100% !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <span class="author-name">Karim B.</span>
+                            <span class="author-role">Client Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Professionnalisme, ponctualité et discrétion. Le Range Rover Autobiography que j'ai loué à Casablanca était impeccable. Le service de conciergerie 24/7 m'a énormément aidé pour adapter mon itinéraire au dernier moment."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <span class="author-name">Sarah M.</span>
+                            <span class="author-role">Dirigeante d'Entreprise</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Toujours un plaisir de passer par ANAS RENT CAR lors de mes déplacements professionnels au Maroc. La transition vers les véhicules électriques de luxe (Audi e-tron) est fantastique, très silencieux et performant."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <span class="author-name">Jean-Pierre D.</span>
+                            <span class="author-role">Client Régulier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info-card">
+                <span class="section-tagline">Nous Contacter</span>
+                <h2 class="contact-card-title">Prêt à Prendre <br><span class="gold-gradient-text">La Route ?</span></h2>
+                <p class="contact-card-desc">Vous avez une demande particulière, un événement spécial ou souhaitez louer un véhicule sur une longue durée ? Envoyez-nous un message.</p>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone info-icon"></i>
+                        <div>
+                            <h4>Téléphone / WhatsApp</h4>
+                            <p><a href="tel:+212600000000" class="hover-gold">+212 6 00 00 00 00</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope info-icon"></i>
+                        <div>
+                            <h4>Adresse Email</h4>
+                            <p><a href="mailto:contact@anasrentcar.com" class="hover-gold">contact@anasrentcar.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot info-icon"></i>
+                        <div>
+                            <h4>Siège Social</h4>
+                            <p>Angle Boulevard Zerktouni & Massira, Casablanca, Maroc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <h3 class="form-title">Envoyez-nous un message</h3>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Nom complet</label>
+                            <input type="text" id="contact-name" placeholder="Votre nom..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Adresse e-mail</label>
+                            <input type="email" id="contact-email" placeholder="Votre e-mail..." required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Sujet</label>
+                        <input type="text" id="contact-subject" placeholder="De quoi s'agit-il ?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Votre message</label>
+                        <textarea id="contact-message" rows="5" placeholder="Votre message détaillé..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold w-full text-center"><i class="fa-solid fa-paper-plane"></i> Envoyer le Message</button>
+                </form>
+                <div id="contact-success" class="alert alert-success hide">
+                    <i class="fa-solid fa-circle-check"></i> Votre message a été envoyé avec succès ! Nous vous recontacterons sous 2 heures.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <!-- Footer Logo -->
+                    <svg class="logo-svg" viewBox="0 0 200 200" width="50" height="50">
+                        <circle cx="100" cy="100" r="95" fill="#0f0f0f" stroke="url(#gold-gradient)" stroke-width="2"/>
+                        <path d="M 55 100 C 60 90, 80 82, 100 82 C 115 82, 130 84, 142 90 C 147 92, 153 96, 155 102 C 152 101, 144 98, 135 100 C 125 102, 110 110, 105 110 C 95 110, 85 105, 80 105" fill="none" stroke="url(#gold-gradient)" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="128" cy="100" r="9" fill="none" stroke="url(#gold-gradient)" stroke-width="2"/>
+                        <g transform="translate(68, 100)">
+                            <circle cx="0" cy="0" r="9" fill="none" stroke="url(#gold-gradient)" stroke-width="2"/>
+                            <path d="M 0 -8 C -4 -8, -4 -3, 0 5 C 4 -3, 4 -8, 0 -8 Z" fill="url(#gold-gradient)"/>
+                        </g>
+                        <text x="100" y="135" font-family="'Playfair Display', serif" font-weight="900" font-size="28" fill="url(#gold-text-grad)" text-anchor="middle" letter-spacing="1">ANAS</text>
+                        <text x="100" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="10" fill="url(#gold-text-grad)" text-anchor="middle" letter-spacing="2.5">RENT CAR</text>
+                    </svg>
+                    <div class="brand-text">
+                        <span class="brand-title text-sm">ANAS</span>
+                        <span class="brand-subtitle text-xs">RENT CAR</span>
+                    </div>
+                </div>
+                <p class="footer-desc">ANAS RENT CAR est votre partenaire de confiance au Maroc pour la location de véhicules haut de gamme, de prestige et sportifs.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4 class="footer-title">Liens Rapides</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#fleet">Notre Flotte</a></li>
+                    <li><a href="#services">Nos Services</a></li>
+                    <li><a href="#testimonials">Avis Clients</a></li>
+                    <li><a href="#contact">Contact & Réservations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4 class="footer-title">Catégories</h4>
+                <ul class="footer-links">
+                    <li><a href="#fleet" class="category-link" data-cat="sport">Sport & Prestige</a></li>
+                    <li><a href="#fleet" class="category-link" data-cat="suv">SUV & 4x4</a></li>
+                    <li><a href="#fleet" class="category-link" data-cat="electric">Berlines Électriques</a></li>
+                    <li><a href="#fleet" class="category-link" data-cat="economy">Économiques</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4 class="footer-title">Nos Villes</h4>
+                <ul class="footer-links">
+                    <li><a href="#fleet">Casablanca</a></li>
+                    <li><a href="#fleet">Marrakech</a></li>
+                    <li><a href="#fleet">Rabat</a></li>
+                    <li><a href="#fleet">Tanger</a></li>
+                    <li><a href="#fleet">Agadir</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 ANAS RENT CAR. Tous droits réservés.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions Légales</a>
+                    <a href="#">Conditions Générales de Vente</a>
+                    <a href="#">Politique de Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal (Glassmorphism & Gold Theme) -->
+    <div class="booking-modal-overlay" id="booking-modal">
+        <div class="booking-modal-card">
+            <button class="modal-close" id="modal-close" aria-label="Fermer le modal">&times;</button>
+            
+            <div class="modal-grid">
+                <!-- Selected Car Preview -->
+                <div class="modal-car-preview">
+                    <span class="modal-badge gold-bg">Véhicule Sélectionné</span>
+                    <h3 class="modal-car-name" id="modal-car-name">Porsche 911 Carrera S</h3>
+                    <div class="modal-car-category" id="modal-car-category">Sport & Prestige</div>
+                    
+                    <div class="modal-img-container">
+                        <img id="modal-car-img" src="" alt="Voiture de location">
+                    </div>
+
+                    <div class="modal-specs-grid">
+                        <div class="modal-spec-item">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <span id="modal-spec-engine">450 ch</span>
+                        </div>
+                        <div class="modal-spec-item">
+                            <i class="fa-solid fa-gears"></i>
+                            <span id="modal-spec-trans">Automatique</span>
+                        </div>
+                        <div class="modal-spec-item">
+                            <i class="fa-solid fa-gas-pump"></i>
+                            <span id="modal-spec-fuel">Essence</span>
+                        </div>
+                        <div class="modal-spec-item">
+                            <i class="fa-solid fa-users"></i>
+                            <span id="modal-spec-seats">4 Places</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-pricing-box">
+                        <span class="pricing-label">Tarif journalier</span>
+                        <div class="pricing-value"><span id="modal-day-price">2500</span> <span class="currency">DH / jour</span></div>
+                    </div>
+                </div>
+
+                <!-- Booking Process Form -->
+                <div class="modal-booking-form">
+                    <h3 class="modal-title"><i class="fa-solid fa-file-invoice-dollar gold-color"></i> Détails de votre réservation</h3>
+                    
+                    <form id="booking-form">
+                        <!-- Dates & Agency -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="book-pickup-location">Lieu de prise en charge</label>
+                                <select id="book-pickup-location" required>
+                                    <option value="casablanca">Casablanca</option>
+                                    <option value="marrakech">Marrakech</option>
+                                    <option value="rabat">Rabat</option>
+                                    <option value="tanger">Tanger</option>
+                                    <option value="agadir">Agadir</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="book-days">Nombre de jours</label>
+                                <input type="number" id="book-days" min="1" max="90" value="3" required>
+                            </div>
+                        </div>
+
+                        <!-- Date inputs hidden or synchronized -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="book-start-date">Date de départ</label>
+                                <input type="date" id="book-start-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="book-end-date">Date de retour</label>
+                                <input type="date" id="book-end-date" required>
+                            </div>
+                        </div>
+
+                        <!-- Extra Options -->
+                        <div class="options-group">
+                            <label class="group-label">Options supplémentaires</label>
+                            
+                            <label class="option-checkbox-container">
+                                <input type="checkbox" id="opt-insurance" value="300">
+                                <span class="checkmark"></span>
+                                <div class="option-details">
+                                    <span class="option-title">Assurance Premium Gold (+300 DH/jour)</span>
+                                    <span class="option-desc">Franchise à 0 DH, couverture totale bris de glace & pneus.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-checkbox-container">
+                                <input type="checkbox" id="opt-gps" value="50">
+                                <span class="checkmark"></span>
+                                <div class="option-details">
+                                    <span class="option-title">Navigateur GPS Haute Définition (+50 DH/jour)</span>
+                                    <span class="option-desc">Cartographie nationale complète intégrée.</span>
+                                </div>
+                            </label>
+
+                            <label class="option-checkbox-container">
+                                <input type="checkbox" id="opt-baby" value="80">
+                                <span class="checkmark"></span>
+                                <div class="option-details">
+                                    <span class="option-title">Siège Enfant / Bébé (+80 DH/jour)</span>
+                                    <span class="option-desc">Sécurité maximale homologuée ISOFIX.</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Client Details -->
+                        <div class="client-details-section">
+                            <label class="group-label">Coordonnées du conducteur</label>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="client-name" placeholder="Nom complet..." required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="client-phone" placeholder="Téléphone / WhatsApp..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="client-email" placeholder="Adresse email..." required>
+                            </div>
+                        </div>
+
+                        <!-- Real-time Summary Box -->
+                        <div class="price-summary-box">
+                            <div class="summary-line">
+                                <span>Tarif de base (<span id="summary-days-count">3</span> jours)</span>
+                                <span id="summary-base-price">7500 DH</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>Options sélectionnées</span>
+                                <span id="summary-options-price">0 DH</span>
+                            </div>
+                            <div class="summary-line total-line">
+                                <span>Total estimé TTC</span>
+                                <span id="summary-total-price" class="gold-gradient-text">7500 DH</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold w-full text-center mt-4" id="submit-booking-btn">
+                            <i class="fa-solid fa-check-double"></i> Confirmer Ma Réservation VIP
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Confirmation Success Modal -->
+    <div class="success-modal-overlay" id="success-modal">
+        <div class="success-card">
+            <div class="success-icon-container">
+                <i class="fa-solid fa-crown gold-color"></i>
+            </div>
+            <h2 class="success-title">Réservation Enregistrée !</h2>
+            <p class="success-desc">Félicitations, votre demande a été prise en compte avec succès.</p>
+            
+            <div class="success-details-box">
+                <div class="success-row">
+                    <span>Client :</span>
+                    <strong id="success-client-name">Karim Benali</strong>
+                </div>
+                <div class="success-row">
+                    <span>Véhicule :</span>
+                    <strong id="success-car-name">Porsche 911 Carrera S</strong>
+                </div>
+                <div class="success-row">
+                    <span>Durée :</span>
+                    <strong id="success-duration">3 Jours</strong>
+                </div>
+                <div class="success-row">
+                    <span>Total Estimé :</span>
+                    <strong id="success-total-price" class="gold-color">8,400 DH</strong>
+                </div>
+                <div class="success-row">
+                    <span>Statut :</span>
+                    <span class="badge badge-success">En attente de validation VIP</span>
+                </div>
+            </div>
+            
+            <p class="success-notice"><i class="fa-brands fa-whatsapp gold-color"></i> Un agent de conciergerie ANAS RENT CAR va vous contacter sur WhatsApp dans les 15 prochaines minutes pour confirmer les détails de la livraison.</p>
+            
+            <button class="btn btn-gold btn-close-success" id="close-success-btn">Retour à l'accueil</button>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Application -->
+    <script src="app.js"></script>
+</body>
+</html>

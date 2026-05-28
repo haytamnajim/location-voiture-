@@ -1,0 +1,13 @@
+{
+  "name": "anas-rent-car",
+  "version": "1.0.0",
+  "description": "ANAS RENT CAR - Luxury Car Rental Web App",
+  "main": "index.html",
+  "scripts": {
+    "dev": "lite-server",
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
