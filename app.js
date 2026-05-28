@@ -5,124 +5,79 @@
 // --- Fleet Database ---
 const carFleet = [
     {
-        id: "porsche-911",
-        name: "Porsche 911 Carrera S",
-        category: "sport",
-        image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80",
+        id: "peugeot-208-grey",
+        name: "Peugeot 208 GT-Line - Gris",
+        category: "peugeot",
+        image: "https://images.unsplash.com/photo-1632245889027-ea2366c4487c?auto=format&fit=crop&w=600&q=80",
         specs: {
-            engine: "450 ch",
-            transmission: "Automatique",
-            fuel: "Essence",
-            seats: "4 Places"
-        },
-        price: 2500,
-        rating: "4.9 (142 avis)",
-        tag: "Exclusif"
-    },
-    {
-        id: "mercedes-g63",
-        name: "Mercedes-Benz G63 AMG",
-        category: "suv",
-        image: "https://images.unsplash.com/photo-1520050206274-a1ae446cb3cc?auto=format&fit=crop&w=600&q=80",
-        specs: {
-            engine: "585 ch",
-            transmission: "Automatique",
-            fuel: "Essence",
-            seats: "5 Places"
-        },
-        price: 4500,
-        rating: "4.8 (98 avis)",
-        tag: "Prestige"
-    },
-    {
-        id: "audi-etron",
-        name: "Audi e-tron GT",
-        category: "electric",
-        image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80",
-        specs: {
-            engine: "646 ch",
-            transmission: "Automatique",
-            fuel: "Électrique",
-            seats: "5 Places"
-        },
-        price: 3200,
-        rating: "4.9 (64 avis)",
-        tag: "Éco Luxe"
-    },
-    {
-        id: "range-rover",
-        name: "Range Rover Autobiography",
-        category: "suv",
-        image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=600&q=80",
-        specs: {
-            engine: "400 ch",
+            engine: "100 ch",
             transmission: "Automatique",
             fuel: "Diesel",
             seats: "5 Places"
         },
-        price: 3000,
-        rating: "4.8 (112 avis)",
-        tag: "Populaire"
-    },
-    {
-        id: "ferrari-f8",
-        name: "Ferrari F8 Tributo",
-        category: "sport",
-        image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=600&q=80",
-        specs: {
-            engine: "720 ch",
-            transmission: "Automatique",
-            fuel: "Essence",
-            seats: "2 Places"
-        },
-        price: 8000,
-        rating: "5.0 (38 avis)",
-        tag: "Supercar"
-    },
-    {
-        id: "tesla-plaid",
-        name: "Tesla Model S Plaid",
-        category: "electric",
-        image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=600&q=80",
-        specs: {
-            engine: "1020 ch",
-            transmission: "Automatique",
-            fuel: "Électrique",
-            seats: "5 Places"
-        },
-        price: 2800,
-        rating: "4.9 (78 avis)",
+        price: 350,
+        rating: "4.9 (124 avis)",
         tag: "Nouveau"
     },
     {
-        id: "golf-8r",
-        name: "Volkswagen Golf 8 R",
-        category: "economy",
-        image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80",
+        id: "peugeot-208-black",
+        name: "Peugeot 208 GT-Line - Noir",
+        category: "peugeot",
+        image: "https://images.unsplash.com/photo-1619551731248-2b1355e54af7?auto=format&fit=crop&w=600&q=80",
         specs: {
-            engine: "320 ch",
-            transmission: "Automatique",
-            fuel: "Essence",
+            engine: "100 ch",
+            transmission: "Manuelle",
+            fuel: "Diesel",
             seats: "5 Places"
         },
-        price: 1100,
-        rating: "4.7 (95 avis)",
-        tag: "Sport Compact"
+        price: 320,
+        rating: "4.8 (85 avis)",
+        tag: "Populaire"
     },
     {
-        id: "bmw-i7",
-        name: "BMW i7 Luxury Sedan",
-        category: "electric",
-        image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80",
+        id: "renault-clio-5",
+        name: "Renault Clio 5 - Gris Nardo",
+        category: "renault",
+        image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=600&q=80",
         specs: {
-            engine: "544 ch",
-            transmission: "Automatique",
-            fuel: "Électrique",
+            engine: "85 ch",
+            transmission: "Manuelle",
+            fuel: "Diesel",
             seats: "5 Places"
         },
-        price: 3500,
-        rating: "4.8 (52 avis)",
-        tag: "Luxe"
+        price: 330,
+        rating: "4.8 (110 avis)",
+        tag: "Confort"
+    },
+    {
+        id: "dacia-logan",
+        name: "Dacia Logan - Gris Comète",
+        category: "dacia",
+        image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=600&q=80",
+        specs: {
+            engine: "95 ch",
+            transmission: "Manuelle",
+            fuel: "Diesel",
+            seats: "5 Places"
+        },
+        price: 300,
+        rating: "4.7 (96 avis)",
+        tag: "Économique"
+    },
+    {
+        id: "dacia-sandero",
+        name: "Dacia Sandero Stepway - Gris",
+        category: "dacia",
+        image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80",
+        specs: {
+            engine: "95 ch",
+            transmission: "Manuelle",
+            fuel: "Diesel",
+            seats: "5 Places"
+        },
+        price: 300,
+        rating: "4.8 (75 avis)",
+        tag: "Crossover"
     }
 ];
 
@@ -346,10 +301,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Format category name for human representation
             let categoryName = "";
             switch (car.category) {
-                case "sport": categoryName = "Sport & Prestige"; break;
-                case "suv": categoryName = "SUV"; break;
-                case "electric": categoryName = "Électrique"; break;
-                case "economy": categoryName = "Économique"; break;
+                case "peugeot": categoryName = "Peugeot Citadine"; break;
+                case "renault": categoryName = "Renault Citadine"; break;
+                case "dacia": categoryName = "Dacia Économique"; break;
             }
 
             card.innerHTML = `
@@ -497,10 +451,9 @@ document.addEventListener("DOMContentLoaded", () => {
         
         let categoryName = "";
         switch (selectedCar.category) {
-            case "sport": categoryName = "Sport & Prestige"; break;
-            case "suv": categoryName = "SUV & Offroad"; break;
-            case "electric": categoryName = "Berline Électrique"; break;
-            case "economy": categoryName = "Économique"; break;
+            case "peugeot": categoryName = "Peugeot Citadine"; break;
+            case "renault": categoryName = "Renault Citadine"; break;
+            case "dacia": categoryName = "Dacia Économique"; break;
         }
         
         modalCarCategory.innerText = categoryName;
