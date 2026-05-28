@@ -8,7 +8,7 @@ const carFleet = [
         id: "peugeot-208-grey",
         name: "Peugeot 208 GT-Line - Gris",
         category: "peugeot",
-        image: "https://images.unsplash.com/photo-1632245889027-ea2366c4487c?auto=format&fit=crop&w=600&q=80",
+        image: "assets/peugeot_208_grey.png",
         specs: {
             engine: "100 ch",
             transmission: "Automatique",
@@ -23,7 +23,7 @@ const carFleet = [
         id: "peugeot-208-black",
         name: "Peugeot 208 GT-Line - Noir",
         category: "peugeot",
-        image: "https://images.unsplash.com/photo-1619551731248-2b1355e54af7?auto=format&fit=crop&w=600&q=80",
+        image: "assets/peugeot_208_black.png",
         specs: {
             engine: "100 ch",
             transmission: "Manuelle",
@@ -36,9 +36,9 @@ const carFleet = [
     },
     {
         id: "renault-clio-5",
-        name: "Renault Clio 5 - Gris Nardo",
+        name: "Renault Clio 5 - Gris",
         category: "renault",
-        image: "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=600&q=80",
+        image: "assets/renault_clio_5.png",
         specs: {
             engine: "85 ch",
             transmission: "Manuelle",
@@ -53,7 +53,7 @@ const carFleet = [
         id: "dacia-logan",
         name: "Dacia Logan - Gris Comète",
         category: "dacia",
-        image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=600&q=80",
+        image: "assets/dacia_logan.png",
         specs: {
             engine: "95 ch",
             transmission: "Manuelle",
@@ -68,7 +68,7 @@ const carFleet = [
         id: "dacia-sandero",
         name: "Dacia Sandero Stepway - Gris",
         category: "dacia",
-        image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80",
+        image: "assets/dacia_sandero.png",
         specs: {
             engine: "95 ch",
             transmission: "Manuelle",
