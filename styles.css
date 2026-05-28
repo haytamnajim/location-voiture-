@@ -42,6 +42,431 @@
     --transition-fast: all 0.2s ease;
 }
 
+/* ==========================================
+   LIGHT THEME OVERRIDES
+   ========================================== */
+[data-theme="light"] {
+    --bg-primary: #f5f0e8;
+    --bg-secondary: #ede7d9;
+    --bg-tertiary: #e4dcc8;
+    --bg-card: rgba(245, 240, 232, 0.85);
+    --bg-glass: rgba(255, 252, 245, 0.85);
+    
+    /* Keep Gold Palette unchanged */
+    --gold-glow: rgba(170, 119, 28, 0.25);
+    
+    /* Text colors inverted */
+    --text-white: #1a1208;
+    --text-gold-light: #7a5c10;
+    --text-gray-light: #3d3320;
+    --text-gray-muted: #6b5c3e;
+    
+    /* Borders */
+    --border-color: rgba(170, 119, 28, 0.2);
+    --border-active: rgba(170, 119, 28, 0.5);
+}
+
+[data-theme="light"] .header {
+    background: rgba(255, 252, 245, 0.92);
+    border-bottom-color: rgba(170, 119, 28, 0.15);
+}
+
+[data-theme="light"] .mobile-nav {
+    background: rgba(255, 252, 245, 0.96);
+    border-bottom-color: rgba(170, 119, 28, 0.15);
+}
+
+[data-theme="light"] .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(245, 240, 232, 0.82) 0%, rgba(245, 240, 232, 0.93) 80%, rgba(245, 240, 232, 1) 100%);
+}
+
+[data-theme="light"] .car-card {
+    background-color: #fff8ef;
+    border-color: rgba(170, 119, 28, 0.18);
+}
+
+[data-theme="light"] .fleet-section {
+    background-color: #ede7d9;
+}
+
+[data-theme="light"] .booking-search-card {
+    background: rgba(255, 252, 245, 0.92);
+    border-color: rgba(170, 119, 28, 0.25);
+    box-shadow: 0 15px 35px rgba(100, 70, 0, 0.15), 0 0 15px var(--gold-glow);
+}
+
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group input {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(170, 119, 28, 0.2);
+    color: var(--text-white);
+}
+
+[data-theme="light"] .form-group select option {
+    background-color: #f5f0e8;
+    color: #1a1208;
+}
+
+[data-theme="light"] .booking-modal-card {
+    background: rgba(255, 252, 245, 0.97);
+    border-color: var(--border-active);
+}
+
+[data-theme="light"] .modal-car-preview {
+    background-color: rgba(200, 175, 130, 0.1);
+}
+
+[data-theme="light"] .service-card {
+    background-color: #fff8ef;
+}
+
+[data-theme="light"] .services-section {
+    background-color: #f5f0e8;
+}
+
+[data-theme="light"] .stats-section {
+    background: linear-gradient(90deg, #e8dfc9 0%, #f0e8d0 50%, #e8dfc9 100%);
+    border-top-color: rgba(170,119,28,0.25);
+    border-bottom-color: rgba(170,119,28,0.25);
+}
+
+[data-theme="light"] .stat-label {
+    color: var(--text-gray-muted);
+}
+
+[data-theme="light"] .testimonials-section {
+    background-color: #ede7d9;
+}
+
+[data-theme="light"] .testimonial-card {
+    background-color: #fff8ef;
+    border-color: rgba(170, 119, 28, 0.15);
+}
+
+[data-theme="light"] .testimonial-text {
+    color: var(--text-gray-light);
+}
+
+[data-theme="light"] .testimonial-author {
+    border-top-color: rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .contact-section {
+    background-color: #f5f0e8;
+}
+
+[data-theme="light"] .contact-form-card {
+    background-color: #fff8ef;
+    border-color: rgba(170, 119, 28, 0.18);
+}
+
+[data-theme="light"] .contact-form input,
+[data-theme="light"] .contact-form textarea {
+    background-color: #f5f0e8;
+    border-color: rgba(170,119,28,0.15);
+    color: #1a1208;
+}
+
+[data-theme="light"] .contact-form input::placeholder,
+[data-theme="light"] .contact-form textarea::placeholder {
+    color: #9e8765;
+}
+
+[data-theme="light"] .footer {
+    background-color: #d9cdb5;
+}
+
+[data-theme="light"] .footer-top {
+    border-bottom-color: rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .footer-links a {
+    color: #6b5c3e;
+}
+
+[data-theme="light"] .footer-bottom {
+    color: #6b5c3e;
+}
+
+[data-theme="light"] .social-icon {
+    background-color: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .price-summary-box {
+    background-color: rgba(200,175,130,0.15);
+    border-color: rgba(170,119,28,0.2);
+}
+
+[data-theme="light"] .success-card {
+    background: rgba(255, 252, 245, 0.97);
+}
+
+[data-theme="light"] .success-details-box {
+    background: rgba(200,175,130,0.12);
+}
+
+[data-theme="light"] .mobile-link {
+    border-bottom-color: rgba(0,0,0,0.07);
+}
+
+[data-theme="light"] .tab-btn {
+    background: rgba(0,0,0,0.04);
+    border-color: rgba(0,0,0,0.08);
+    color: var(--text-gray-light);
+}
+
+[data-theme="light"] .menu-toggle .bar {
+    background-color: #1a1208;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+    background: #e8dfc9;
+}
+
+[data-theme="light"] .option-checkbox-container {
+    background-color: rgba(200,175,130,0.1);
+    border-color: rgba(170,119,28,0.12);
+}
+
+[data-theme="light"] .client-details-section {
+    border-top-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .client-details-section input {
+    background-color: rgba(200,175,130,0.15);
+    border-color: rgba(170,119,28,0.15);
+    color: #1a1208;
+}
+
+[data-theme="light"] .summary-line.total-line {
+    border-top-color: rgba(0,0,0,0.08);
+    color: #1a1208;
+}
+
+[data-theme="light"] .success-notice {
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+/* ==========================================
+   ARABIC (RTL) LANGUAGE SUPPORT
+   ========================================== */
+[lang="ar"] {
+    direction: rtl;
+    font-family: 'Noto Kufi Arabic', 'Amiri', 'Cairo', var(--font-sans);
+}
+
+[lang="ar"] .header-container {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .nav-menu {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .nav-actions {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .nav-link::after {
+    left: auto;
+    right: 0;
+}
+
+[lang="ar"] .hero-content {
+    text-align: right;
+}
+
+[lang="ar"] .hero-actions {
+    justify-content: flex-start;
+}
+
+[lang="ar"] .hero-badge {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .section-header {
+    text-align: center;
+}
+
+[lang="ar"] .form-group label {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[lang="ar"] .search-card-title {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .footer-top {
+    direction: rtl;
+}
+
+[lang="ar"] .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 4px;
+}
+
+[lang="ar"] .mobile-link:hover {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+[lang="ar"] .booking-modal-card {
+    direction: rtl;
+}
+
+[lang="ar"] .modal-car-preview {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+[lang="ar"] .modal-close {
+    right: auto;
+    left: 20px;
+}
+
+[lang="ar"] .modal-badge {
+    align-self: flex-start;
+}
+
+[lang="ar"] .contact-container {
+    direction: rtl;
+}
+
+[lang="ar"] .info-item {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[lang="ar"] .success-notice {
+    border-left: none;
+    border-right: 3px solid var(--gold-main);
+    border-radius: 8px 0 0 8px;
+    text-align: right;
+}
+
+[lang="ar"] .success-details-box {
+    text-align: right;
+}
+
+[lang="ar"] .spec-item,
+[lang="ar"] .modal-spec-item {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .car-price-row {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .option-checkbox-container {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[lang="ar"] .summary-line {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .success-row {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .mobile-controls-row {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .car-tag {
+    left: auto;
+    right: 20px;
+}
+
+[lang="ar"] .modal-title {
+    flex-direction: row-reverse;
+}
+
+[lang="ar"] .info-item h4,
+[lang="ar"] .info-item p {
+    text-align: right;
+}
+
+/* ==========================================
+   THEME TOGGLE & LANG SWITCHER BUTTONS
+   ========================================== */
+.theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-gold-light);
+    padding: 8px 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--gold-gradient);
+    color: #000;
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+[data-theme="light"] .theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(170, 119, 28, 0.25);
+    color: var(--text-gold-light);
+}
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-gray-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: var(--transition-fast);
+    letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+    color: var(--gold-main);
+}
+
+.lang-btn.active {
+    color: var(--gold-main);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.lang-divider {
+    color: var(--border-color);
+    font-size: 1rem;
+    opacity: 0.6;
+}
+
+.mobile-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
 /* --- Base Resets --- */
 *, *::before, *::after {
     box-sizing: border-box;

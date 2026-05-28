@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ANAS RENT CAR - Service de location de voitures de luxe et de prestige. Réservez votre véhicule d'exception au meilleur prix.">
     <title>ANAS RENT CAR | Location de Voitures de Prestige & Luxe</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts (FR + AR) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- Init theme before paint to prevent flash -->
+    <script>
+        (function(){
+            const t = localStorage.getItem('arcTheme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Stylesheet -->
@@ -61,15 +68,23 @@
 
             <!-- Desktop Nav -->
             <nav class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">Accueil</a>
-                <a href="#fleet" class="nav-link">Notre Flotte</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#testimonials" class="nav-link">Avis</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link active" data-i18n="nav_home">Accueil</a>
+                <a href="#fleet" class="nav-link" data-i18n="nav_fleet">Notre Flotte</a>
+                <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+                <a href="#testimonials" class="nav-link" data-i18n="nav_testimonials">Avis</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="#fleet" class="btn btn-gold btn-nav">Réserver</a>
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Basculer le thème">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="lang-btn-fr" data-lang="fr">FR</button>
+                    <span class="lang-divider">/</span>
+                    <button class="lang-btn" id="lang-btn-ar" data-lang="ar">AR</button>
+                </div>
+                <a href="#fleet" class="btn btn-gold btn-nav" data-i18n="nav_book">Réserver</a>
                 <!-- Hamburger Menu -->
                 <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
                     <span class="bar"></span>
@@ -82,12 +97,22 @@
 
     <!-- Mobile Drawer Navigation -->
     <div class="mobile-nav" id="mobile-nav">
-        <a href="#home" class="mobile-link">Accueil</a>
-        <a href="#fleet" class="mobile-link">Notre Flotte</a>
-        <a href="#services" class="mobile-link">Services</a>
-        <a href="#testimonials" class="mobile-link">Avis</a>
-        <a href="#contact" class="mobile-link">Contact</a>
-        <a href="#fleet" class="btn btn-gold w-full text-center mt-6">Réserver Maintenant</a>
+        <div class="mobile-controls-row">
+            <button class="theme-toggle-btn" id="theme-toggle-mobile" aria-label="Basculer le thème">
+                <i class="fa-solid fa-moon"></i> <span data-i18n="theme_text">Thème</span>
+            </button>
+            <div class="lang-switcher">
+                <button class="lang-btn active" id="lang-btn-fr-mobile" data-lang="fr">FR</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" id="lang-btn-ar-mobile" data-lang="ar">AR</button>
+            </div>
+        </div>
+        <a href="#home" class="mobile-link" data-i18n="nav_home">Accueil</a>
+        <a href="#fleet" class="mobile-link" data-i18n="nav_fleet">Notre Flotte</a>
+        <a href="#services" class="mobile-link" data-i18n="nav_services">Services</a>
+        <a href="#testimonials" class="mobile-link" data-i18n="nav_testimonials">Avis</a>
+        <a href="#contact" class="mobile-link" data-i18n="nav_contact">Contact</a>
+        <a href="#fleet" class="btn btn-gold w-full text-center mt-6" data-i18n="nav_book_now">Réserver Maintenant</a>
     </div>
 
     <!-- Hero Section -->
@@ -95,36 +120,36 @@
         <div class="hero-bg-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <span class="hero-badge"><i class="fa-solid fa-crown gold-color"></i> L'Excellence Automobile</span>
-                <h1 class="hero-title">Louez l'Exceptionnel Avec <span class="gold-gradient-text">ANAS RENT CAR</span></h1>
-                <p class="hero-subtitle">Une flotte exclusive de véhicules de luxe, de sport et de prestige pour sublimer vos trajets et marquer vos événements marquants.</p>
+                <span class="hero-badge"><i class="fa-solid fa-crown gold-color"></i> <span data-i18n="hero_badge">L'Excellence Automobile</span></span>
+                <h1 class="hero-title" data-i18n="hero_title">Louez l'Exceptionnel Avec <span class="gold-gradient-text">ANAS RENT CAR</span></h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">Une flotte exclusive de véhicules de prestige pour sublimer vos trajets au Maroc et vous assurer un confort optimal.</p>
                 <div class="hero-actions">
-                    <a href="#fleet" class="btn btn-gold"><i class="fa-solid fa-car"></i> Découvrir la Flotte</a>
-                    <a href="#services" class="btn btn-outline"><i class="fa-solid fa-circle-info"></i> Nos Services</a>
+                    <a href="#fleet" class="btn btn-gold"><i class="fa-solid fa-car"></i> <span data-i18n="hero_btn_fleet">Découvrir la Flotte</span></a>
+                    <a href="#services" class="btn btn-outline"><i class="fa-solid fa-circle-info"></i> <span data-i18n="hero_btn_services">Nos Services</span></a>
                 </div>
             </div>
 
             <!-- Booking Search Bar (Glassmorphism) -->
             <div class="booking-search-card">
-                <h3 class="search-card-title"><i class="fa-solid fa-calendar-check gold-color"></i> Trouver une voiture</h3>
+                <h3 class="search-card-title"><i class="fa-solid fa-calendar-check gold-color"></i> <span data-i18n="search_title">Trouver une voiture</span></h3>
                 <form class="search-form" id="hero-search-form">
                     <div class="form-group">
-                        <label for="pickup-location"><i class="fa-solid fa-location-dot"></i> Lieu de prise en charge</label>
+                        <label for="pickup-location"><i class="fa-solid fa-location-dot"></i> <span data-i18n="search_loc">Lieu de prise en charge</span></label>
                         <select id="pickup-location" required>
-                            <option value="" disabled selected>Choisir une ville...</option>
-                            <option value="casablanca">Casablanca</option>
-                            <option value="marrakech">Marrakech</option>
-                            <option value="rabat">Rabat</option>
-                            <option value="tanger">Tanger</option>
-                            <option value="agadir">Agadir</option>
+                            <option value="" disabled selected data-i18n="search_loc_placeholder">Choisir une ville...</option>
+                            <option value="casablanca" data-i18n="city_casa">Casablanca</option>
+                            <option value="marrakech" data-i18n="city_kech">Marrakech</option>
+                            <option value="rabat" data-i18n="city_rabat">Rabat</option>
+                            <option value="tanger" data-i18n="city_tanger">Tanger</option>
+                            <option value="agadir" data-i18n="city_agadir">Agadir</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="pickup-date"><i class="fa-solid fa-calendar-days"></i> Date de départ</label>
+                        <label for="pickup-date"><i class="fa-solid fa-calendar-days"></i> <span data-i18n="search_start">Date de départ</span></label>
                         <input type="date" id="pickup-date" required>
                     </div>
                     <div class="form-group">
-                        <label for="return-date"><i class="fa-solid fa-calendar-days"></i> Date de retour</label>
+                        <label for="return-date"><i class="fa-solid fa-calendar-days"></i> <span data-i18n="search_end">Date de retour</span></label>
                         <input type="date" id="return-date" required>
                     </div>
                     <div class="form-group">

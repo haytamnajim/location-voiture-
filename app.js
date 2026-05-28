@@ -367,31 +367,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Initialize Fleet
-    renderCars();
-
-    // Tab Filter Clicks
-    tabBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            tabBtns.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            
-            const category = btn.getAttribute("data-category");
-            
-            // Out animation
-            carsGrid.style.opacity = "0";
-            carsGrid.style.transform = "translateY(10px)";
-            carsGrid.style.transition = "opacity 0.2s ease, transform 0.2s ease";
-            
-            setTimeout(() => {
-                renderCars(category);
-                carsGrid.style.opacity = "1";
-                carsGrid.style.transform = "translateY(0)";
-            }, 250);
-        });
-    });
-
-    // Handle clicks from Footer Categories
+    // Fleet init + tab filtering handled by renderCarsLocalized() below
+    // Footer category links
     categoryLinks.forEach(link => {
         link.addEventListener("click", (e) => {
             const cat = link.getAttribute("data-cat");
@@ -618,4 +595,269 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 6000);
         }, 1500);
     });
+
+    // ==========================================
+    // 8. Theme Toggle (Dark / Light)
+    // ==========================================
+
+    const themeToggleBtns = document.querySelectorAll(".theme-toggle-btn");
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("arcTheme", theme);
+
+        // Update all toggle button icons
+        themeToggleBtns.forEach(btn => {
+            const icon = btn.querySelector("i");
+            if (icon) {
+                if (theme === "light") {
+                    icon.className = "fa-solid fa-sun";
+                } else {
+                    icon.className = "fa-solid fa-moon";
+                }
+            }
+        });
+    }
+
+    // Init from localStorage
+    const savedTheme = localStorage.getItem("arcTheme") || "dark";
+    applyTheme(savedTheme);
+
+    // Click event on all theme buttons (desktop + mobile)
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const current = document.documentElement.getAttribute("data-theme");
+            applyTheme(current === "dark" ? "light" : "dark");
+        });
+    });
+
+    // ==========================================
+    // 9. Language Switcher (FR / AR)
+    // ==========================================
+
+    const translations = {
+        fr: {
+            // Nav
+            nav_home: "Accueil",
+            nav_fleet: "Notre Flotte",
+            nav_services: "Services",
+            nav_testimonials: "Avis",
+            nav_contact: "Contact",
+            nav_book: "Réserver",
+            nav_book_now: "Réserver Maintenant",
+            theme_text: "Thème",
+            // Hero
+            hero_badge: "L'Excellence Automobile",
+            hero_title: "Louez l'Exceptionnel Avec <span class=\"gold-gradient-text\">ANAS RENT CAR</span>",
+            hero_subtitle: "Une flotte exclusive de véhicules de prestige pour sublimer vos trajets au Maroc et vous assurer un confort optimal.",
+            hero_btn_fleet: "Découvrir la Flotte",
+            hero_btn_services: "Nos Services",
+            // Search
+            search_title: "Trouver une voiture",
+            search_loc: "Lieu de prise en charge",
+            search_loc_placeholder: "Choisir une ville...",
+            search_start: "Date de départ",
+            search_end: "Date de retour",
+            city_casa: "Casablanca",
+            city_kech: "Marrakech",
+            city_rabat: "Rabat",
+            city_tanger: "Tanger",
+            city_agadir: "Agadir",
+            // Cars
+            car_reserve_btn: "Réserver",
+            car_from: "À partir de",
+            // Footer
+            footer_rights: "© 2026 ANAS RENT CAR. Tous droits réservés.",
+        },
+        ar: {
+            // Nav
+            nav_home: "الرئيسية",
+            nav_fleet: "أسطولنا",
+            nav_services: "الخدمات",
+            nav_testimonials: "التقييمات",
+            nav_contact: "اتصل بنا",
+            nav_book: "احجز الآن",
+            nav_book_now: "احجز الآن",
+            theme_text: "المظهر",
+            // Hero
+            hero_badge: "التميز في عالم السيارات",
+            hero_title: "استأجر الاستثنائي مع <span class=\"gold-gradient-text\">أناس لتأجير السيارات</span>",
+            hero_subtitle: "أسطول حصري من السيارات الفاخرة لتميز تنقلاتك في المغرب وضمان أقصى درجات الراحة والأناقة.",
+            hero_btn_fleet: "اكتشف أسطولنا",
+            hero_btn_services: "خدماتنا",
+            // Search
+            search_title: "ابحث عن سيارة",
+            search_loc: "مكان الاستلام",
+            search_loc_placeholder: "اختر مدينة...",
+            search_start: "تاريخ الانطلاق",
+            search_end: "تاريخ العودة",
+            city_casa: "الدار البيضاء",
+            city_kech: "مراكش",
+            city_rabat: "الرباط",
+            city_tanger: "طنجة",
+            city_agadir: "أكادير",
+            // Cars
+            car_reserve_btn: "احجز",
+            car_from: "ابتداءً من",
+            // Footer
+            footer_rights: "© 2026 أناس لتأجير السيارات. جميع الحقوق محفوظة.",
+        }
+    };
+
+    const langBtns = document.querySelectorAll(".lang-btn");
+    let currentLang = localStorage.getItem("arcLang") || "fr";
+
+    function applyLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("arcLang", lang);
+
+        // Set HTML lang and direction
+        document.documentElement.setAttribute("lang", lang);
+
+        // Update all lang button active states
+        document.querySelectorAll(".lang-btn").forEach(b => {
+            b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+        });
+
+        const t = translations[lang];
+
+        // Translate elements with data-i18n attribute
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (t[key] !== undefined) {
+                el.innerHTML = t[key];
+            }
+        });
+
+        // Re-render cars to update button labels
+        const activeTab = document.querySelector(".tab-btn.active");
+        const category = activeTab ? activeTab.getAttribute("data-category") : "all";
+        renderCarsLocalized(category, lang);
+    }
+
+    function renderCarsLocalized(category = "all", lang = "fr") {
+        const t = translations[lang];
+        carsGrid.innerHTML = "";
+
+        const filteredCars = category === "all"
+            ? carFleet
+            : carFleet.filter(car => car.category === category);
+
+        if (filteredCars.length === 0) {
+            carsGrid.innerHTML = `<div class="no-cars">${lang === 'ar' ? 'لا توجد سيارات متاحة في هذه الفئة حالياً.' : 'Aucun véhicule disponible dans cette catégorie pour le moment.'}</div>`;
+            return;
+        }
+
+        filteredCars.forEach((car, index) => {
+            const card = document.createElement("div");
+            card.className = "car-card";
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+
+            let categoryName = "";
+            if (lang === 'ar') {
+                switch (car.category) {
+                    case "peugeot": categoryName = "بيجو سيتي"; break;
+                    case "renault": categoryName = "رينو سيتي"; break;
+                    case "dacia": categoryName = "داسيا اقتصادية"; break;
+                }
+            } else {
+                switch (car.category) {
+                    case "peugeot": categoryName = "Peugeot Citadine"; break;
+                    case "renault": categoryName = "Renault Citadine"; break;
+                    case "dacia": categoryName = "Dacia Économique"; break;
+                }
+            }
+
+            const fromLabel = t.car_from || "À partir de";
+            const reserveLabel = t.car_reserve_btn || "Réserver";
+
+            card.innerHTML = `
+                <div class="car-img-wrapper">
+                    <span class="car-tag">${car.tag}</span>
+                    <img src="${car.image}" alt="${car.name}" loading="lazy">
+                </div>
+                <div class="car-details">
+                    <h3 class="car-name">${car.name}</h3>
+                    <div class="car-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <span>${car.rating}</span>
+                    </div>
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <span>${car.specs.engine}</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-gears"></i>
+                            <span>${car.specs.transmission}</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-gas-pump"></i>
+                            <span>${car.specs.fuel}</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-users"></i>
+                            <span>${car.specs.seats}</span>
+                        </div>
+                    </div>
+                    <div class="car-price-row">
+                        <div class="price-box">
+                            <span class="price-label">${fromLabel}</span>
+                            <span class="price-amount">${car.price} <span class="currency">DH/j</span></span>
+                        </div>
+                        <button class="btn btn-gold btn-rent" data-id="${car.id}">
+                            <i class="fa-solid fa-calendar-days"></i> ${reserveLabel}
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            carsGrid.appendChild(card);
+
+            setTimeout(() => {
+                card.style.transition = "var(--transition-smooth)";
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+            }, index * 80);
+        });
+
+        // Re-attach booking buttons
+        document.querySelectorAll(".btn-rent").forEach(btn => {
+            btn.addEventListener("click", () => {
+                openBookingModal(btn.getAttribute("data-id"));
+            });
+        });
+    }
+
+    // Override the initial renderCars with localized version
+    renderCarsLocalized("all", currentLang);
+
+    // Tab Filter clicks: use localized render
+    tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tabBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            const category = btn.getAttribute("data-category");
+            carsGrid.style.opacity = "0";
+            carsGrid.style.transform = "translateY(10px)";
+            carsGrid.style.transition = "opacity 0.2s ease, transform 0.2s ease";
+            setTimeout(() => {
+                renderCarsLocalized(category, currentLang);
+                carsGrid.style.opacity = "1";
+                carsGrid.style.transform = "translateY(0)";
+            }, 250);
+        });
+    });
+
+    // Language button click
+    langBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            applyLanguage(btn.getAttribute("data-lang"));
+        });
+    });
+
+    // Init language on page load
+    applyLanguage(currentLang);
+
 });
