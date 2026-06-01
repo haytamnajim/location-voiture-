@@ -540,6 +540,70 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalEstimate = summaryTotalPrice.innerText;
         const durationText = `${bookDays.value} ${parseInt(bookDays.value) > 1 ? 'Jours' : 'Jour'}`;
 
+        // Construct localized option text
+        const selectedOptions = [];
+        if (optInsurance.checked) {
+            selectedOptions.push(currentLang === "ar" ? "التأمين الذهبي الشامل (+300 درهم/يوم)" : "Assurance Premium Gold (+300 DH/jour)");
+        }
+        if (optGps.checked) {
+            selectedOptions.push(currentLang === "ar" ? "نظام ملاحة GPS (+50 درهم/يوم)" : "Navigateur GPS HD (+50 DH/jour)");
+        }
+        if (optBaby.checked) {
+            selectedOptions.push(currentLang === "ar" ? "مقعد طفل / رضيع (+80 درهم/يوم)" : "Siège Enfant / Bébé (+80 DH/jour)");
+        }
+        const optionsText = selectedOptions.length > 0 
+            ? selectedOptions.join(", ") 
+            : (currentLang === "ar" ? "لا توجد خيارات إضافية" : "Aucune option");
+
+        // Format pickup location
+        const pickupLocVal = bookPickupLocation.value;
+        let formattedLoc = pickupLocVal.charAt(0).toUpperCase() + pickupLocVal.slice(1);
+        if (currentLang === "ar") {
+            const locMap = {
+                casablanca: "الدار البيضاء",
+                marrakech: "مراكش",
+                rabat: "الرباط",
+                tanger: "طنجة",
+                agadir: "أكادير"
+            };
+            formattedLoc = locMap[pickupLocVal] || formattedLoc;
+        }
+
+        const startDateVal = bookStartDate.value;
+        const endDateVal = bookEndDate.value;
+
+        // Generate WhatsApp message
+        let message = "";
+        if (currentLang === "ar") {
+            message = `مرحباً أناس لتأجير السيارات،\n\n` +
+                      `أرغب في حجز السيارة التالية:\n` +
+                      `🚗 السيارة: ${selectedCar.name}\n` +
+                      `👤 السائق: ${clientNameVal}\n` +
+                      `📞 الهاتف: ${clientPhoneVal}\n` +
+                      `✉️ البريد الإلكتروني: ${clientEmailVal}\n` +
+                      `📍 مكان الاستلام: ${formattedLoc}\n` +
+                      `📅 الفترة: من ${startDateVal} إلى ${endDateVal} (${bookDays.value} ${parseInt(bookDays.value) > 1 ? 'أيام' : 'يوم'})\n` +
+                      `🛠️ الخيارات الإضافية: ${optionsText}\n` +
+                      `💵 المجموع التقديري: ${totalEstimate}\n\n` +
+                      `يرجى تأكيد الحجز الخاص بي. شكراً لكم!`;
+        } else {
+            message = `Bonjour ANAS RENT CAR,\n\n` +
+                      `Je souhaite effectuer une réservation pour le véhicule suivant :\n` +
+                      `🚗 Véhicule : ${selectedCar.name}\n` +
+                      `👤 Conducteur : ${clientNameVal}\n` +
+                      `📞 Téléphone : ${clientPhoneVal}\n` +
+                      `✉️ Email : ${clientEmailVal}\n` +
+                      `📍 Lieu : ${formattedLoc}\n` +
+                      `📅 Période : du ${startDateVal} au ${endDateVal} (${bookDays.value} ${parseInt(bookDays.value) > 1 ? 'jours' : 'jour'})\n` +
+                      `🛠️ Options : ${optionsText}\n` +
+                      `💵 Total estimé : ${totalEstimate}\n\n` +
+                      `Merci de confirmer ma réservation VIP.`;
+        }
+
+        // Redirect to WhatsApp
+        const whatsappUrl = `https://wa.me/212632230098?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+
         // Populate Success Modal Fields
         successClientName.innerText = clientNameVal;
         successCarName.innerText = selectedCar.name;
