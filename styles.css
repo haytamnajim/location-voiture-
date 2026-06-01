@@ -2058,6 +2058,46 @@ a {
     .stats-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Hide desktop toggles/switchers in header on mobile to prevent clutter */
+    .header .theme-toggle-btn,
+    .header .lang-switcher {
+        display: none !important;
+    }
+
+    /* Optimize modal scrollability and tap layouts on mobile */
+    .booking-modal-overlay {
+        align-items: flex-start !important;
+        padding: 10px !important;
+    }
+
+    .booking-modal-card {
+        max-height: none !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .modal-close {
+        top: 15px !important;
+        right: 15px !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.6rem !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+        border: 1px solid rgba(255,255,255,0.15) !important;
+        line-height: 1 !important;
+    }
+
+    [lang="ar"] .modal-close {
+        right: auto !important;
+        left: 15px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2085,5 +2125,35 @@ a {
     
     .contact-form-card {
         padding: 24px;
+    }
+
+    /* Adjust padding of cards and modals for very small screens */
+    .modal-car-preview,
+    .modal-booking-form {
+        padding: 25px 15px !important;
+    }
+
+    .modal-car-name {
+        font-size: 1.8rem !important;
+    }
+
+    .modal-specs-grid {
+        gap: 10px !important;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .car-specs {
+        gap: 10px !important;
+    }
+
+    .spec-item {
+        font-size: 0.78rem !important;
+    }
+
+    .car-name {
+        font-size: 1.3rem !important;
     }
 }
