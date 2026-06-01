@@ -36,9 +36,9 @@ const carFleet = [
     },
     {
         id: "renault-clio-5",
-        name: "Renault Clio 5 - Gris",
+        name: "Renault Clio 5 - Noir",
         category: "renault",
-        image: "assets/renault_clio_5.png",
+        image: "assets/renault_clio_5_black.png",
         specs: {
             engine: "85 ch",
             transmission: "Manuelle",
@@ -51,9 +51,9 @@ const carFleet = [
     },
     {
         id: "dacia-logan",
-        name: "Dacia Logan - Gris Comète",
+        name: "Dacia Logan - Noir",
         category: "dacia",
-        image: "assets/dacia_logan.png",
+        image: "assets/dacia_logan_black.png",
         specs: {
             engine: "95 ch",
             transmission: "Manuelle",
@@ -930,8 +930,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroBackgrounds = [
         "assets/peugeot_208_grey.png",
         "assets/peugeot_208_black.png",
-        "assets/renault_clio_5.png",
-        "assets/dacia_logan.png",
+        "assets/renault_clio_5_black.png",
+        "assets/dacia_logan_black.png",
         "assets/dacia_sandero.png"
     ];
     
