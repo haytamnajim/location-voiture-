@@ -795,10 +795,12 @@ a {
     align-items: center;
     padding-top: 130px;
     padding-bottom: 80px;
-    background-image: url('https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80');
+    background-image: url('assets/peugeot_208_grey.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: var(--bg-primary);
+    transition: background-image 1s ease-in-out;
 }
 
 .hero-bg-overlay {

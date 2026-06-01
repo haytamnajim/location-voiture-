@@ -924,4 +924,37 @@ document.addEventListener("DOMContentLoaded", () => {
     // Init language on page load
     applyLanguage(currentLang);
 
+    // ==========================================
+    // 10. Hero Background Slideshow (5s Interval)
+    // ==========================================
+    const heroBackgrounds = [
+        "assets/peugeot_208_grey.png",
+        "assets/peugeot_208_black.png",
+        "assets/renault_clio_5.png",
+        "assets/dacia_logan.png",
+        "assets/dacia_sandero.png"
+    ];
+    
+    const heroSection = document.getElementById("home");
+    if (heroSection) {
+        let currentBgIndex = 0;
+        
+        // Preload backgrounds to prevent flash of white screen
+        heroBackgrounds.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        function changeHeroBackground() {
+            currentBgIndex = (currentBgIndex + 1) % heroBackgrounds.length;
+            heroSection.style.backgroundImage = `url('${heroBackgrounds[currentBgIndex]}')`;
+        }
+
+        // Set initial background explicitly
+        heroSection.style.backgroundImage = `url('${heroBackgrounds[0]}')`;
+
+        // Switch background every 5 seconds
+        setInterval(changeHeroBackground, 5000);
+    }
+
 });
