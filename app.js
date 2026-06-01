@@ -11,7 +11,7 @@ const carFleet = [
         image: "assets/peugeot_208_grey.png",
         specs: {
             engine: "100 ch",
-            transmission: "Automatique",
+            transmission: "Manuelle",
             fuel: "Diesel",
             seats: "5 Places"
         },
