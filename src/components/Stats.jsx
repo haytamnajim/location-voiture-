@@ -2,14 +2,14 @@ import React from 'react';
 
 const statsData = {
   fr: [
-    { number: "50+", label: "Véhicules de luxe" },
-    { number: "10k+", label: "Clients Satisfaits" },
+    { number: "15+", label: "Véhicules de luxe" },
+    { number: "100+", label: "Clients Satisfaits" },
     { number: "5★", label: "Note Moyenne Google" },
     { number: "24h", label: "Livraison Express" }
   ],
   ar: [
-    { number: "+50", label: "سيارة فاخرة" },
-    { number: "+10k", label: "زبون راضٍ" },
+    { number: "+15", label: "سيارة فاخرة" },
+    { number: "+100", label: "زبون راضٍ" },
     { number: "★5", label: "متوسط تقييم جوجل" },
     { number: "24س", label: "توصيل سريع" }
   ]
