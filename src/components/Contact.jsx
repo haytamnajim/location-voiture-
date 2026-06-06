@@ -80,7 +80,7 @@ export default function Contact({ language }) {
   return (
     <section id="contact" className="contact-section">
       <div className="container contact-container">
-        <div className="contact-info-card">
+        <div className="contact-info-card reveal">
           <span className="section-tagline">{content.tagline}</span>
           <h2 
             className="contact-card-title"
@@ -117,7 +117,7 @@ export default function Contact({ language }) {
           </div>
         </div>
 
-        <div className="contact-form-card">
+        <div className="contact-form-card reveal delay-2">
           <h3 className="form-title">{content.formTitle}</h3>
           <form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">

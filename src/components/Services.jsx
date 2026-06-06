@@ -63,7 +63,7 @@ export default function Services({ language }) {
   return (
     <section id="services" className="services-section">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header reveal">
           <span className="section-tagline">{content.tagline}</span>
           <h2 
             className="section-title"
@@ -74,7 +74,7 @@ export default function Services({ language }) {
 
         <div className="services-grid">
           {content.items.map((item, idx) => (
-            <div key={idx} className="service-card">
+            <div key={idx} className={`service-card reveal delay-${idx + 1}`}>
               <div className="service-icon">
                 <i className={`fa-solid ${item.icon}`}></i>
               </div>

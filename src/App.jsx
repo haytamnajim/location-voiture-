@@ -53,6 +53,35 @@ export default function App() {
     }
   }, [language]);
 
+  // Intersection Observer for scroll reveal animations
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const timer = setTimeout(() => {
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach(el => observer.observe(el));
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach(el => observer.unobserve(el));
+    };
+  }, [language]);
+
   const handleSearch = ({ pickupLocation, pickupDate, returnDate, category }) => {
     setInitialSearchValues({ pickupLocation, pickupDate, returnDate });
     setActiveCategory(category);

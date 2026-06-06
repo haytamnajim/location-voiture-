@@ -22,7 +22,7 @@ export default function Stats({ language }) {
     <section className="stats-section">
       <div className="container stats-container">
         {list.map((stat, idx) => (
-          <div key={idx} className="stat-item">
+          <div key={idx} className={`stat-item reveal delay-${idx + 1}`}>
             <span className="stat-number">{stat.number}</span>
             <span className="stat-label">{stat.label}</span>
           </div>

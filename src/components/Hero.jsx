@@ -89,15 +89,15 @@ export default function Hero({ language, onSearch }) {
       <div className="hero-bg-overlay"></div>
       <div className="container hero-container">
         <div className="hero-content">
-          <span className="hero-badge">
+          <span className="hero-badge animate-fade-in-up anim-delay-100">
             <i className="fa-solid fa-crown gold-color"></i> <span>{t.hero_badge}</span>
           </span>
           <h1 
-            className="hero-title"
+            className="hero-title animate-fade-in-up anim-delay-200"
             dangerouslySetInnerHTML={{ __html: t.hero_title }}
           />
-          <p className="hero-subtitle">{t.hero_subtitle}</p>
-          <div className="hero-actions">
+          <p className="hero-subtitle animate-fade-in-up anim-delay-300">{t.hero_subtitle}</p>
+          <div className="hero-actions animate-fade-in-up anim-delay-400">
             <a href="#fleet" className="btn btn-gold">
               <i className="fa-solid fa-car"></i> <span>{t.hero_btn_fleet}</span>
             </a>
@@ -108,7 +108,7 @@ export default function Hero({ language, onSearch }) {
         </div>
 
         {/* Booking Search Bar (Glassmorphism) */}
-        <div className="booking-search-card">
+        <div className="booking-search-card animate-fade-in-up anim-delay-300">
           <h3 className="search-card-title">
             <i className="fa-solid fa-calendar-check gold-color"></i> <span>{t.search_title}</span>
           </h3>
@@ -172,7 +172,7 @@ export default function Hero({ language, onSearch }) {
                 <option value="dacia">Dacia</option>
               </select>
             </div>
-            <button type="submit" className="btn btn-gold btn-search">
+            <button type="submit" className="btn btn-gold btn-search pulse-btn">
               <i className="fa-solid fa-magnifying-glass"></i> {language === 'ar' ? 'بحث' : 'Rechercher'}
             </button>
           </form>

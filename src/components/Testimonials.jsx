@@ -59,7 +59,7 @@ export default function Testimonials({ language }) {
   return (
     <section id="testimonials" className="testimonials-section">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header reveal">
           <span className="section-tagline">{content.tagline}</span>
           <h2 
             className="section-title"
@@ -70,7 +70,7 @@ export default function Testimonials({ language }) {
 
         <div className="testimonials-grid">
           {content.items.map((item, idx) => (
-            <div key={idx} className="testimonial-card">
+            <div key={idx} className={`testimonial-card reveal delay-${idx + 1}`}>
               <div className="testimonial-rating">
                 {[...Array(item.rating)].map((_, starIdx) => (
                   <i key={starIdx} className="fa-solid fa-star"></i>

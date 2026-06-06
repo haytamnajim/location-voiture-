@@ -29,7 +29,7 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
   return (
     <section id="fleet" className="fleet-section">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header reveal">
           <span className="section-tagline">
             {language === 'ar' ? 'اختيارنا المميز' : 'Notre Sélection'}
           </span>
@@ -48,7 +48,7 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
         </div>
 
         {/* Categories Tabs */}
-        <div className="fleet-tabs">
+        <div className="fleet-tabs reveal delay-1">
           <button 
             className={`tab-btn ${activeCategory === 'all' ? 'active' : ''}`} 
             onClick={() => handleTabChange('all')}
@@ -77,7 +77,7 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
 
         {/* Fleet Cars Grid */}
         <div 
-          className="cars-grid" 
+          className="cars-grid reveal delay-2" 
           id="cars-grid"
           style={{
             opacity: isTransitioning ? 0 : 1,
@@ -109,7 +109,7 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
                 >
                   <div className="car-img-wrapper">
                     <span className="car-tag">{car.tag}</span>
-                    <img src={car.image} alt={car.name} loading="lazy" />
+                    <img src={car.image} alt={car.name} className="car-image" loading="lazy" />
                   </div>
                   <div className="car-details">
                     <h3 className="car-name">{car.name}</h3>
