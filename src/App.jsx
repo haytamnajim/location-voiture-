@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Stats from './components/Stats';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
+import CarMarquee from './components/CarMarquee';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import SuccessModal from './components/SuccessModal';
@@ -126,6 +127,7 @@ export default function App() {
         <Testimonials language={language} />
         
         <Contact language={language} />
+        <CarMarquee language={language} onSelectCar={handleSelectCar} />
       </main>
 
       <Footer 
