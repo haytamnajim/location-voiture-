@@ -13,7 +13,6 @@ const footerData = {
     home: "Accueil",
     fleet: "Notre Flotte",
     services: "Nos Services",
-    testimonials: "Avis Clients",
     contact: "Contact & Réservations"
   },
   ar: {
@@ -28,7 +27,6 @@ const footerData = {
     home: "الرئيسية",
     fleet: "أسطولنا",
     services: "خدماتنا",
-    testimonials: "آراء العملاء",
     contact: "الاتصال والحجز"
   }
 };
@@ -89,7 +87,6 @@ export default function Footer({ language, setActiveCategory }) {
             <li><a href="#home">{content.home}</a></li>
             <li><a href="#fleet">{content.fleet}</a></li>
             <li><a href="#services">{content.services}</a></li>
-            <li><a href="#testimonials">{content.testimonials}</a></li>
             <li><a href="#contact">{content.contact}</a></li>
           </ul>
         </div>

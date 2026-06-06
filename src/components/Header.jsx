@@ -22,7 +22,7 @@ export default function Header({ language, setLanguage, theme, setTheme }) {
       setScrollProgress(docHeight > 0 ? (scrollY / docHeight) * 100 : 0);
 
       // Highlight active link
-      const sections = ['home', 'fleet', 'services', 'testimonials', 'contact'];
+      const sections = ['home', 'fleet', 'services', 'contact'];
       const scrollPosition = scrollY + 150;
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -52,7 +52,6 @@ export default function Header({ language, setLanguage, theme, setTheme }) {
     { href: '#home',         label: t.nav_home,         icon: 'fa-house' },
     { href: '#fleet',        label: t.nav_fleet,        icon: 'fa-car' },
     { href: '#services',     label: t.nav_services,     icon: 'fa-star' },
-    { href: '#testimonials', label: t.nav_testimonials, icon: 'fa-comments' },
     { href: '#contact',      label: t.nav_contact,      icon: 'fa-envelope' },
   ];
 

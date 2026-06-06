@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Fleet from './components/Fleet';
 import Services from './components/Services';
 import Stats from './components/Stats';
-import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import CarMarquee from './components/CarMarquee';
 import Footer from './components/Footer';
@@ -123,8 +122,6 @@ export default function App() {
         <Services language={language} />
         
         <Stats language={language} />
-        
-        <Testimonials language={language} />
         
         <Contact language={language} />
         <CarMarquee language={language} onSelectCar={handleSelectCar} />
