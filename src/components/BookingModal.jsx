@@ -17,7 +17,6 @@ export default function BookingModal({
   // Driver details
   const [clientName, setClientName] = useState('');
   const [clientPhone, setClientPhone] = useState('');
-  const [clientEmail, setClientEmail] = useState('');
 
   // Set limits
   const todayStr = new Date().toISOString().split("T")[0];
@@ -154,7 +153,6 @@ export default function BookingModal({
                 `🚗 السيارة: ${car.name}\n` +
                 `👤 السائق: ${clientName}\n` +
                 `📞 الهاتف: ${clientPhone}\n` +
-                `✉️ البريد الإلكتروني: ${clientEmail}\n` +
                 `📍 مكان الاستلام: ${formattedLoc}\n` +
                 `📅 الفترة: من ${pickupDate} إلى ${returnDate} (${daysCount} ${daysCount > 1 ? 'أيام' : 'يوم'})\n` +
                 `💵 المجموع التقديري: ${totalEstimateStr}\n\n` +
@@ -165,7 +163,6 @@ export default function BookingModal({
                 `🚗 Véhicule : ${car.name}\n` +
                 `👤 Conducteur : ${clientName}\n` +
                 `📞 Téléphone : ${clientPhone}\n` +
-                `✉️ Email : ${clientEmail}\n` +
                 `📍 Lieu : ${formattedLoc}\n` +
                 `📅 Période : du ${pickupDate} au ${returnDate} (${daysCount} ${daysCount > 1 ? 'jours' : 'jour'})\n` +
                 `💵 Total estimé : ${totalEstimateStr}\n\n` +
@@ -187,7 +184,6 @@ export default function BookingModal({
     // Reset form states
     setClientName('');
     setClientPhone('');
-    setClientEmail('');
     handleClose();
   };
 
@@ -328,16 +324,7 @@ export default function BookingModal({
                     />
                   </div>
                 </div>
-                <div className="form-group">
-                  <input 
-                    type="email" 
-                    id="client-email" 
-                    placeholder={language === 'ar' ? 'البريد الإلكتروني...' : 'Adresse email...'} 
-                    value={clientEmail}
-                    onChange={(e) => setClientEmail(e.target.value)}
-                    required
-                  />
-                </div>
+
               </div>
 
               {/* Real-time Summary Box */}

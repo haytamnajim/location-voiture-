@@ -49,7 +49,6 @@ export default function Contact({ language }) {
   const content = contactData[language] || contactData.fr;
 
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   
@@ -68,7 +67,6 @@ export default function Contact({ language }) {
       
       // Reset form fields
       setName('');
-      setEmail('');
       setSubject('');
       setMessage('');
 
@@ -122,29 +120,16 @@ export default function Contact({ language }) {
         <div className="contact-form-card">
           <h3 className="form-title">{content.formTitle}</h3>
           <form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="contact-name">{content.nameLabel}</label>
-                <input 
-                  type="text" 
-                  id="contact-name" 
-                  placeholder={content.namePlaceholder} 
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required 
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="contact-email">{content.mailLabel}</label>
-                <input 
-                  type="email" 
-                  id="contact-email" 
-                  placeholder={content.emailPlaceholder} 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required 
-                />
-              </div>
+            <div className="form-group">
+              <label htmlFor="contact-name">{content.nameLabel}</label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                placeholder={content.namePlaceholder} 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required 
+              />
             </div>
             <div className="form-group">
               <label htmlFor="contact-subject">{content.subjectLabel}</label>
