@@ -5,6 +5,7 @@ import { translations } from '../data/translations';
 export default function Fleet({ language, activeCategory, setActiveCategory, onSelectCar }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [displayedCars, setDisplayedCars] = useState(carFleet);
+  const [flippedCards, setFlippedCards] = useState({});
 
   const t = translations[language];
 
@@ -16,6 +17,7 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
         ? carFleet 
         : carFleet.filter(car => car.category === activeCategory);
       setDisplayedCars(filtered);
+      setFlippedCards({}); // Reset flip states when category changes
       setIsTransitioning(false);
     }, 250);
 
@@ -24,6 +26,15 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
 
   const handleTabChange = (category) => {
     setActiveCategory(category);
+  };
+
+  const toggleFlip = (id, e) => {
+    // Don't toggle flip if they clicked the reserve button
+    if (e.target.closest('.btn-rent')) return;
+    setFlippedCards(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
   };
 
   return (
@@ -95,57 +106,99 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
             displayedCars.map((car, index) => {
               const fromLabel = t.car_from || "À partir de";
               const reserveLabel = t.car_reserve_btn || "Réserver";
+              const isFlipped = !!flippedCards[car.id];
 
               return (
                 <div 
                   key={car.id} 
-                  className="car-card"
+                  className={`car-card flip-card ${isFlipped ? 'flipped' : ''}`}
+                  onClick={(e) => toggleFlip(car.id, e)}
                   style={{
                     opacity: 1,
-                    transform: 'translateY(0)',
-                    transition: 'var(--transition-smooth)',
                     animationDelay: `${index * 80}ms`
                   }}
                 >
-                  <div className="car-img-wrapper">
-                    <span className="car-tag">{car.tag}</span>
-                    <img src={car.image} alt={car.name} className="car-image" loading="lazy" />
-                  </div>
-                  <div className="car-details">
-                    <h3 className="car-name">{car.name}</h3>
-                    <div className="car-rating">
-                      <i className="fa-solid fa-star"></i>
-                      <span>{car.rating}</span>
-                    </div>
-                    <div className="car-specs">
-                      <div className="spec-item">
-                        <i className="fa-solid fa-gauge-high"></i>
-                        <span>{car.specs.engine}</span>
+                  <div className="flip-card-inner">
+                    {/* Recto / Front Face */}
+                    <div className="flip-card-front">
+                      <div className="car-img-wrapper">
+                        <span className="car-tag">{car.tag}</span>
+                        <img src={car.image} alt={car.name} className="car-image" loading="lazy" />
                       </div>
-                      <div className="spec-item">
-                        <i className="fa-solid fa-gears"></i>
-                        <span>{car.specs.transmission}</span>
-                      </div>
-                      <div className="spec-item">
-                        <i className="fa-solid fa-gas-pump"></i>
-                        <span>{car.specs.fuel}</span>
-                      </div>
-                      <div className="spec-item">
-                        <i className="fa-solid fa-users"></i>
-                        <span>{car.specs.seats}</span>
+                      <div className="car-details">
+                        <h3 className="car-name">{car.name}</h3>
+                        <div className="car-rating">
+                          <i className="fa-solid fa-star"></i>
+                          <span>{car.rating}</span>
+                        </div>
+                        <div className="car-price-row">
+                          <div className="price-box">
+                            <span className="price-label">{fromLabel}</span>
+                            <span className="price-amount">{car.price} <span className="currency">DH/j</span></span>
+                          </div>
+                          <div className="flip-hint" title={language === 'ar' ? 'عرض التفاصيل' : 'Voir les détails'}>
+                            <i className="fa-solid fa-rotate"></i>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="car-price-row">
-                      <div className="price-box">
-                        <span className="price-label">{fromLabel}</span>
-                        <span className="price-amount">{car.price} <span class="currency">DH/j</span></span>
-                      </div>
+
+                    {/* Verso / Back Face */}
+                    <div className="flip-card-back">
+                      {/* Flip Back Button (Mobile/Interactive) */}
                       <button 
-                        className="btn btn-gold btn-rent" 
-                        onClick={() => onSelectCar(car)}
+                        className="flip-back-btn" 
+                        title={language === 'ar' ? 'الرجوع' : 'Retour'}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setFlippedCards(prev => ({ ...prev, [car.id]: false }));
+                        }}
                       >
-                        <i className="fa-solid fa-calendar-days"></i> {reserveLabel}
+                        <i className="fa-solid fa-arrow-rotate-left"></i>
                       </button>
+
+                      <div className="back-content">
+                        <h3 className="back-car-name">{car.name}</h3>
+                        <div className="back-car-rating">
+                          <i className="fa-solid fa-star"></i>
+                          <span>{car.rating}</span>
+                        </div>
+                        
+                        <div className="car-specs-back">
+                          <div className="spec-item-back">
+                            <i className="fa-solid fa-gauge-high"></i>
+                            <span>{car.specs.engine}</span>
+                          </div>
+                          <div className="spec-item-back">
+                            <i className="fa-solid fa-gears"></i>
+                            <span>{car.specs.transmission}</span>
+                          </div>
+                          <div className="spec-item-back">
+                            <i className="fa-solid fa-gas-pump"></i>
+                            <span>{car.specs.fuel}</span>
+                          </div>
+                          <div className="spec-item-back">
+                            <i className="fa-solid fa-users"></i>
+                            <span>{car.specs.seats}</span>
+                          </div>
+                        </div>
+
+                        <div className="back-price-row">
+                          <div className="price-box">
+                            <span className="price-label">{fromLabel}</span>
+                            <span className="price-amount">{car.price} <span className="currency">DH/j</span></span>
+                          </div>
+                          <button 
+                            className="btn btn-dark-gold btn-rent" 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onSelectCar(car);
+                            }}
+                          >
+                            <i className="fa-solid fa-calendar-days"></i> {reserveLabel}
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
