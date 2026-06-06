@@ -2591,7 +2591,6 @@ body, header, section, .booking-search-card, .car-card, .service-card, .testimon
 /* Pause animations on hover */
 .highway-container:hover .marquee-track,
 .highway-container:hover .highway-lines,
-.highway-container:hover .spinning-wheel,
 .highway-container:hover .marquee-car-card {
     animation-play-state: paused;
 }
@@ -2631,38 +2630,64 @@ body, header, section, .booking-search-card, .car-card, .service-card, .testimon
     position: relative;
     z-index: 3;
     transition: filter 0.3s ease;
+    /* Fade out studio background box, keep car silhouette sharp */
+    -webkit-mask-image: radial-gradient(ellipse 72% 65% at 50% 55%, black 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 72% 65% at 50% 55%, black 55%, transparent 100%);
 }
 
 .marquee-car-wrapper:hover .marquee-car-body {
     filter: drop-shadow(0 15px 20px rgba(212, 175, 55, 0.25)) brightness(1.05);
 }
 
-/* Rotating Wheel */
-.marquee-wheel {
+
+/* Speed lines - motion streak effect behind cars */
+.speed-lines {
     position: absolute;
-    z-index: 4;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    background-color: #121212;
+    top: 50%;
+    left: -60px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.spinning-wheel {
-    width: 100%;
-    height: 100%;
-    animation: spin-wheel-ccw 0.7s linear infinite;
+.speed-lines span {
     display: block;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.6), transparent);
+    border-radius: 2px;
+    animation: speed-flash 0.4s linear infinite;
 }
 
-@keyframes spin-wheel-ccw {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
+.speed-lines span:nth-child(1) { width: 55px; animation-delay: 0s; }
+.speed-lines span:nth-child(2) { width: 40px; animation-delay: 0.07s; }
+.speed-lines span:nth-child(3) { width: 65px; animation-delay: 0.13s; }
+.speed-lines span:nth-child(4) { width: 35px; animation-delay: 0.05s; }
+.speed-lines span:nth-child(5) { width: 50px; animation-delay: 0.1s; }
+.speed-lines span:nth-child(6) { width: 45px; animation-delay: 0.18s; }
+
+@keyframes speed-flash {
+    0%   { opacity: 0.2; transform: scaleX(0.7); }
+    50%  { opacity: 0.9; transform: scaleX(1); }
+    100% { opacity: 0.2; transform: scaleX(0.7); }
 }
 
-/* Interactive Floating Price Tag */
+.marquee-car-wrapper:hover .speed-lines {
+    opacity: 1;
+}
+
+/* Pause speed lines on container hover (car stops) */
+.highway-container:hover .speed-lines span {
+    animation-play-state: paused;
+}
+.highway-container:hover .speed-lines {
+    opacity: 0;
+}
+
+
 .marquee-car-badge {
     position: absolute;
     top: -25px;
@@ -2724,10 +2749,6 @@ html[dir="rtl"] .highway-lines {
     animation: scroll-road-lines-rtl 0.6s linear infinite;
 }
 
-html[dir="rtl"] .spinning-wheel {
-    animation: spin-wheel-cw 0.7s linear infinite;
-}
-
 @keyframes scroll-marquee-rtl {
     0% {
         transform: translateX(0);
@@ -2743,15 +2764,6 @@ html[dir="rtl"] .spinning-wheel {
     }
     to {
         background-position-x: -60px;
-    }
-}
-
-@keyframes spin-wheel-cw {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
     }
 }
 
