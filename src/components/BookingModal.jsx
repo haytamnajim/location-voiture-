@@ -17,6 +17,7 @@ export default function BookingModal({
   // Driver details
   const [clientName, setClientName] = useState('');
   const [clientPhone, setClientPhone] = useState('');
+  const [licenseYear, setLicenseYear] = useState('');
 
   // Set limits
   const todayStr = new Date().toISOString().split("T")[0];
@@ -153,6 +154,7 @@ export default function BookingModal({
                 `🚗 السيارة: ${car.name}\n` +
                 `👤 السائق: ${clientName}\n` +
                 `📞 الهاتف: ${clientPhone}\n` +
+                `🪪 سنة الحصول على رخصة السياقة: ${licenseYear}\n` +
                 `📍 مكان الاستلام: ${formattedLoc}\n` +
                 `📅 الفترة: من ${pickupDate} إلى ${returnDate} (${daysCount} ${daysCount > 1 ? 'أيام' : 'يوم'})\n` +
                 `💵 المجموع التقديري: ${totalEstimateStr}\n\n` +
@@ -163,6 +165,7 @@ export default function BookingModal({
                 `🚗 Véhicule : ${car.name}\n` +
                 `👤 Conducteur : ${clientName}\n` +
                 `📞 Téléphone : ${clientPhone}\n` +
+                `🪪 Année d'obtention du permis : ${licenseYear}\n` +
                 `📍 Lieu : ${formattedLoc}\n` +
                 `📅 Période : du ${pickupDate} au ${returnDate} (${daysCount} ${daysCount > 1 ? 'jours' : 'jour'})\n` +
                 `💵 Total estimé : ${totalEstimateStr}\n\n` +
@@ -184,6 +187,7 @@ export default function BookingModal({
     // Reset form states
     setClientName('');
     setClientPhone('');
+    setLicenseYear('');
     handleClose();
   };
 
@@ -324,7 +328,18 @@ export default function BookingModal({
                     />
                   </div>
                 </div>
-
+                <div className="form-group" style={{ marginTop: '12px' }}>
+                  <input 
+                    type="number" 
+                    id="client-license-year" 
+                    placeholder={language === 'ar' ? 'سنة الحصول على رخصة السياقة...' : "Année d'obtention du permis..."} 
+                    value={licenseYear}
+                    onChange={(e) => setLicenseYear(e.target.value)}
+                    min="1950"
+                    max={new Date().getFullYear()}
+                    required
+                  />
+                </div>
               </div>
 
               {/* Real-time Summary Box */}
