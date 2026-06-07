@@ -46,30 +46,30 @@
    LIGHT THEME OVERRIDES
    ========================================== */
 [data-theme="light"] {
-    --bg-primary: #f5f0e8;
-    --bg-secondary: #ede7d9;
-    --bg-tertiary: #e4dcc8;
-    --bg-card: rgba(245, 240, 232, 0.85);
-    --bg-glass: rgba(255, 252, 245, 0.85);
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f5f0;
+    --bg-tertiary: #f0ebe3;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-glass: rgba(255, 255, 255, 0.95);
     
     /* Keep Gold Palette unchanged */
-    --gold-glow: rgba(170, 119, 28, 0.25);
+    --gold-glow: rgba(212, 175, 55, 0.25);
     
     /* Text colors inverted */
-    --text-white: #1a1208;
-    --text-gold-light: #7a5c10;
-    --text-gray-light: #3d3320;
-    --text-gray-muted: #6b5c3e;
+    --text-white: #1a1a1a;
+    --text-gold-light: #b8860b;
+    --text-gray-light: #4a4a4a;
+    --text-gray-muted: #6a6a6a;
     
     /* Borders */
-    --border-color: rgba(170, 119, 28, 0.2);
-    --border-active: rgba(170, 119, 28, 0.5);
+    --border-color: rgba(212, 175, 55, 0.2);
+    --border-active: rgba(212, 175, 55, 0.4);
 }
 
 [data-theme="light"] .header {
-    background: linear-gradient(180deg, rgba(255, 252, 245, 0.95) 0%, rgba(255, 252, 245, 0.88) 100%);
-    border-bottom-color: rgba(170, 119, 28, 0.2);
-    box-shadow: 0 4px 30px rgba(170, 119, 28, 0.15);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 245, 240, 0.95) 100%);
+    border-bottom-color: rgba(212, 175, 55, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="light"] .header::before {
@@ -77,62 +77,62 @@
 }
 
 [data-theme="light"] .mobile-nav {
-    background: rgba(255, 252, 245, 0.96);
-    border-bottom-color: rgba(170, 119, 28, 0.15);
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom-color: rgba(212, 175, 55, 0.15);
 }
 
 [data-theme="light"] .hero-bg-overlay {
-    background: linear-gradient(180deg, rgba(245, 240, 232, 0.82) 0%, rgba(245, 240, 232, 0.93) 80%, rgba(245, 240, 232, 1) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 245, 240, 0.92) 80%, rgba(240, 235, 227, 0.98) 100%);
 }
 
 [data-theme="light"] .car-card {
-    background-color: #fff8ef;
-    border-color: rgba(170, 119, 28, 0.18);
+    background-color: #ffffff;
+    border-color: rgba(212, 175, 55, 0.15);
 }
 
 [data-theme="light"] .fleet-section {
-    background-color: #ede7d9;
+    background-color: #f8f5f0;
 }
 
 [data-theme="light"] .booking-search-card {
-    background: rgba(255, 252, 245, 0.92);
-    border-color: rgba(170, 119, 28, 0.25);
-    box-shadow: 0 15px 35px rgba(100, 70, 0, 0.15), 0 0 15px var(--gold-glow);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
 [data-theme="light"] .form-group select,
 [data-theme="light"] .form-group input {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-color: rgba(170, 119, 28, 0.2);
-    color: var(--text-white);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(212, 175, 55, 0.2);
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .form-group select option {
-    background-color: #f5f0e8;
-    color: #1a1208;
+    background-color: #ffffff;
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .booking-modal-card {
-    background: rgba(255, 252, 245, 0.97);
+    background: rgba(255, 255, 255, 0.98);
     border-color: var(--border-active);
 }
 
 [data-theme="light"] .modal-car-preview {
-    background-color: rgba(200, 175, 130, 0.1);
+    background-color: rgba(212, 175, 55, 0.05);
 }
 
 [data-theme="light"] .service-card {
-    background-color: #fff8ef;
+    background-color: #ffffff;
 }
 
 [data-theme="light"] .services-section {
-    background-color: #f5f0e8;
+    background-color: #f8f5f0;
 }
 
 [data-theme="light"] .stats-section {
-    background: linear-gradient(90deg, #e8dfc9 0%, #f0e8d0 50%, #e8dfc9 100%);
-    border-top-color: rgba(170,119,28,0.25);
-    border-bottom-color: rgba(170,119,28,0.25);
+    background: linear-gradient(90deg, #f8f5f0 0%, #ffffff 50%, #f8f5f0 100%);
+    border-top-color: rgba(212, 175, 55, 0.2);
+    border-bottom-color: rgba(212, 175, 55, 0.2);
 }
 
 [data-theme="light"] .stat-label {
@@ -140,28 +140,28 @@
 }
 
 [data-theme="light"] .contact-section {
-    background-color: #f5f0e8;
+    background-color: #f8f5f0;
 }
 
 [data-theme="light"] .contact-form-card {
-    background-color: #fff8ef;
-    border-color: rgba(170, 119, 28, 0.18);
+    background-color: #ffffff;
+    border-color: rgba(212, 175, 55, 0.15);
 }
 
 [data-theme="light"] .contact-form input,
 [data-theme="light"] .contact-form textarea {
-    background-color: #f5f0e8;
-    border-color: rgba(170,119,28,0.15);
-    color: #1a1208;
+    background-color: #f8f5f0;
+    border-color: rgba(212, 175, 55, 0.15);
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .contact-form input::placeholder,
 [data-theme="light"] .contact-form textarea::placeholder {
-    color: #9e8765;
+    color: #9a9a9a;
 }
 
 [data-theme="light"] .footer {
-    background: linear-gradient(180deg, #f5f0e8 0%, #ede7d9 50%, #e4dcc8 100%);
+    background: linear-gradient(180deg, #f8f5f0 0%, #f0ebe3 50%, #e8e3db 100%);
     border-top-color: var(--gold-dark);
 }
 
@@ -170,7 +170,7 @@
 }
 
 [data-theme="light"] .footer-top {
-    border-bottom-color: rgba(170, 119, 28, 0.15);
+    border-bottom-color: rgba(212, 175, 55, 0.15);
 }
 
 [data-theme="light"] .footer-desc {
@@ -182,8 +182,8 @@
 }
 
 [data-theme="light"] .social-icon {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(170, 119, 28, 0.25);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(212, 175, 55, 0.25);
     color: var(--text-gray-light);
 }
 
@@ -210,12 +210,12 @@
 }
 
 [data-theme="light"] .footer-bottom {
-    background: rgba(245, 240, 232, 0.5);
+    background: rgba(240, 235, 227, 0.6);
     color: var(--text-gray-muted);
 }
 
 [data-theme="light"] .footer-bottom::before {
-    background: linear-gradient(90deg, transparent 0%, rgba(170, 119, 28, 0.2) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.2) 50%, transparent 100%);
 }
 
 [data-theme="light"] .footer-bottom-links a::after {
@@ -223,16 +223,16 @@
 }
 
 [data-theme="light"] .price-summary-box {
-    background-color: rgba(200,175,130,0.15);
-    border-color: rgba(170,119,28,0.2);
+    background-color: rgba(212, 175, 55, 0.08);
+    border-color: rgba(212, 175, 55, 0.2);
 }
 
 [data-theme="light"] .success-card {
-    background: rgba(255, 252, 245, 0.97);
+    background: rgba(255, 255, 255, 0.98);
 }
 
 [data-theme="light"] .success-details-box {
-    background: rgba(200,175,130,0.12);
+    background: rgba(212, 175, 55, 0.08);
 }
 
 [data-theme="light"] .mobile-link {
@@ -240,41 +240,41 @@
 }
 
 [data-theme="light"] .tab-btn {
-    background: rgba(0,0,0,0.04);
-    border-color: rgba(0,0,0,0.08);
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(212, 175, 55, 0.15);
     color: var(--text-gray-light);
 }
 
 [data-theme="light"] .menu-toggle .bar {
-    background-color: #1a1208;
+    background-color: #1a1a1a;
 }
 
 [data-theme="light"] ::-webkit-scrollbar-track {
-    background: #e8dfc9;
+    background: #f0ebe3;
 }
 
 [data-theme="light"] .option-checkbox-container {
-    background-color: rgba(200,175,130,0.1);
-    border-color: rgba(170,119,28,0.12);
+    background-color: rgba(212, 175, 55, 0.06);
+    border-color: rgba(212, 175, 55, 0.12);
 }
 
 [data-theme="light"] .client-details-section {
-    border-top-color: rgba(0,0,0,0.08);
+    border-top-color: rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="light"] .client-details-section input {
-    background-color: rgba(200,175,130,0.15);
-    border-color: rgba(170,119,28,0.15);
-    color: #1a1208;
+    background-color: rgba(212, 175, 55, 0.06);
+    border-color: rgba(212, 175, 55, 0.15);
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .summary-line.total-line {
-    border-top-color: rgba(0,0,0,0.08);
-    color: #1a1208;
+    border-top-color: rgba(212, 175, 55, 0.2);
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .success-notice {
-    background-color: rgba(212, 175, 55, 0.05);
+    background-color: rgba(212, 175, 55, 0.08);
 }
 
 /* ==========================================
