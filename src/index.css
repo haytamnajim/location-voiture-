@@ -47,23 +47,23 @@
    ========================================== */
 [data-theme="light"] {
     --bg-primary: #ffffff;
-    --bg-secondary: #f8f5f0;
-    --bg-tertiary: #f0ebe3;
-    --bg-card: rgba(255, 255, 255, 0.95);
-    --bg-glass: rgba(255, 255, 255, 0.95);
-    
+    --bg-secondary: #f5f2ed;
+    --bg-tertiary: #ebe8e2;
+    --bg-card: rgba(255, 255, 255, 0.98);
+    --bg-glass: rgba(255, 255, 255, 0.98);
+
     /* Keep Gold Palette unchanged */
-    --gold-glow: rgba(212, 175, 55, 0.25);
-    
-    /* Text colors inverted */
+    --gold-glow: rgba(212, 175, 55, 0.3);
+
+    /* Text colors inverted with better contrast */
     --text-white: #1a1a1a;
-    --text-gold-light: #b8860b;
-    --text-gray-light: #4a4a4a;
-    --text-gray-muted: #6a6a6a;
-    
-    /* Borders */
-    --border-color: rgba(212, 175, 55, 0.2);
-    --border-active: rgba(212, 175, 55, 0.4);
+    --text-gold-light: #8b6914;
+    --text-gray-light: #2d2d2d;
+    --text-gray-muted: #4a4a4a;
+
+    /* Borders with better visibility */
+    --border-color: rgba(212, 175, 55, 0.25);
+    --border-active: rgba(212, 175, 55, 0.5);
 }
 
 [data-theme="light"] .header {
