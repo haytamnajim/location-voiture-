@@ -1394,10 +1394,11 @@ a {
     box-shadow: none !important;
     border-radius: var(--border-radius-lg);
     overflow: visible !important; /* Allow 3D depth to pop out */
-    perspective: 1000px;
+    perspective: 1200px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    height: 420px;
 }
 
 /* Inner face wrapper */
@@ -1406,7 +1407,7 @@ a {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Rotate the card on hover or flipped state */
@@ -1419,51 +1420,50 @@ a {
 .flip-card-front,
 .flip-card-back {
     width: 100%;
+    height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
-    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Front Face */
 .flip-card-front {
     position: relative;
-    background-color: var(--bg-tertiary);
+    background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
     display: flex;
     flex-direction: column;
-    height: 100%;
-    overflow: hidden; /* Ensure rounded corners clip contents */
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 /* Back Face (Gold Theme) */
 .flip-card-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
     transform: rotateY(180deg);
-    background: linear-gradient(135deg, #f3d078 0%, #d4af37 60%, #b58b22 100%);
+    background: linear-gradient(135deg, #f3d078 0%, #d4af37 50%, #b58b22 100%);
     color: #0d0d0d;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 24px;
+    padding: 28px;
     box-sizing: border-box;
     overflow: hidden;
+    box-shadow: 0 8px 30px rgba(212,175,55,0.4);
 }
 
 /* Hover glow effects applied directly to the active visible face */
-.car-card:hover .flip-card-front,
-.car-card.flipped .flip-card-front {
+.car-card:hover .flip-card-front {
     border-color: var(--border-active);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px var(--gold-glow);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 20px var(--gold-glow);
 }
 
-.car-card:hover .flip-card-back,
-.car-card.flipped .flip-card-back {
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+.car-card:hover .flip-card-back {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 25px rgba(212, 175, 55, 0.4);
 }
 
 /* Back Face Details & Structure */
@@ -1475,49 +1475,59 @@ a {
 }
 
 .back-car-name {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: #050505;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     line-height: 1.2;
 }
 
 .back-car-rating {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
+    gap: 8px;
+    font-size: 0.9rem;
     color: #2a2a2a;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .back-car-rating i {
     color: #000000;
+    font-size: 1rem;
 }
 
 .car-specs-back {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+    gap: 18px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
 }
 
 .spec-item-back {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
+    gap: 12px;
+    font-size: 0.9rem;
     color: #151515;
     font-weight: 600;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.spec-item-back:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateX(4px);
 }
 
 .spec-item-back i {
     color: #000000;
-    font-size: 1rem;
-    width: 18px;
+    font-size: 1.1rem;
+    width: 20px;
     text-align: center;
 }
 
@@ -1529,14 +1539,14 @@ a {
 }
 
 .flip-card-back .price-box .price-label {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #2a2a2a;
     text-transform: uppercase;
     font-weight: 700;
 }
 
 .flip-card-back .price-box .price-amount {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: #000000;
 }
@@ -1545,22 +1555,24 @@ a {
 .btn-dark-gold {
     background-color: #000000;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 22px;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: var(--transition-fast);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .btn-dark-gold:hover {
     background-color: #1c1c1c;
     color: var(--gold-main);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
 }
 
 /* Flip indicators */
@@ -1568,37 +1580,38 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.25);
     color: var(--gold-main);
-    transition: var(--transition-smooth);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .car-card:hover .flip-hint,
 .car-card.flipped .flip-hint {
     background: var(--gold-gradient);
     color: #000000;
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 4px 15px rgba(212,175,55,0.4);
 }
 
 .flip-back-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 32px;
-    height: 32px;
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.12);
     color: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
-    transition: var(--transition-smooth);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.15);
     z-index: 10;
 }
 
@@ -1606,70 +1619,73 @@ a {
     background: #000000;
     color: var(--gold-main);
     border-color: #000000;
+    transform: scale(1.1);
 }
 
 /* RTL Support */
 html[dir="rtl"] .flip-back-btn {
     right: auto;
-    left: 15px;
+    left: 18px;
 }
 
 .car-img-wrapper {
     position: relative;
-    height: 220px;
+    height: 240px;
     overflow: hidden;
-    background-color: #121212;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
 }
 
 .car-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition-smooth);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .car-card:hover .car-img-wrapper img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 .car-tag {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 18px;
+    left: 18px;
     background: var(--gold-gradient);
     color: #000000;
     font-size: 0.75rem;
     font-weight: 700;
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 50px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    letter-spacing: 0.6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .car-details {
-    padding: 24px;
+    padding: 26px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .car-name {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .car-rating {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
+    gap: 8px;
+    font-size: 0.9rem;
     color: var(--text-gray-muted);
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .car-rating i {
     color: var(--gold-main);
+    font-size: 1rem;
 }
 
 .car-specs {

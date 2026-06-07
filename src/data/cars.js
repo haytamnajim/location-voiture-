@@ -10,7 +10,7 @@ export const carFleet = [
       fuel: "Diesel",
       seats: "5 Places"
     },
-    price: 350,
+    price: 300,
     rating: "4.9 (124 avis)",
     tag: "Nouveau"
   },
@@ -25,7 +25,7 @@ export const carFleet = [
       fuel: "Diesel",
       seats: "5 Places"
     },
-    price: 320,
+    price: 300,
     rating: "4.8 (85 avis)",
     tag: "Populaire"
   },
@@ -40,7 +40,7 @@ export const carFleet = [
       fuel: "Diesel",
       seats: "5 Places"
     },
-    price: 330,
+    price: 300,
     rating: "4.8 (110 avis)",
     tag: "Confort"
   },
