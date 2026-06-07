@@ -8,7 +8,7 @@ const contactData = {
     phoneLabel: "Téléphone / WhatsApp",
     emailLabel: "Adresse Email",
     officeLabel: "Siège Social",
-    officeValue: "Angle Boulevard Zerktouni & Massira, Casablanca, Maroc",
+    officeValue: "Sidi bernoussi tariq",
     formTitle: "Envoyez-nous un message",
     namePlaceholder: "Votre nom...",
     emailPlaceholder: "Votre e-mail...",
@@ -29,7 +29,7 @@ const contactData = {
     phoneLabel: "الهاتف / واتساب",
     emailLabel: "البريد الإلكتروني",
     officeLabel: "المقر الرئيسي",
-    officeValue: "ملتقى شارع الزرقطوني والمسيرة، الدار البيضاء، المغرب",
+    officeValue: "سيدي برنوسي الطارق",
     formTitle: "أرسل لنا رسالة",
     namePlaceholder: "اسمك الكامل...",
     emailPlaceholder: "بريدك الإلكتروني...",
@@ -94,7 +94,7 @@ export default function Contact({ language }) {
               <div>
                 <h4>{content.phoneLabel}</h4>
                 <p>
-                  <a href="tel:+212632230098" className="hover-gold">+212 6 32 23 00 98</a>
+                  <a href="tel:+212603357867" className="hover-gold">+212 6 03 35 78 67</a>
                 </p>
               </div>
             </div>

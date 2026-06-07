@@ -1184,6 +1184,25 @@ a {
     100% { left: 120%; }
 }
 
+.typewriter-text {
+    display: inline-block;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 3.8rem;
+    background-color: var(--gold-main);
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 .hero-subtitle {
     font-size: 1.1rem;
     color: rgba(224, 224, 224, 0.8);

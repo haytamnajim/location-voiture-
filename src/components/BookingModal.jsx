@@ -173,7 +173,7 @@ export default function BookingModal({
     }
 
     // Open WhatsApp
-    const whatsappUrl = `https://wa.me/212632230098?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/212603357867?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     // Callback to trigger Success Modal
