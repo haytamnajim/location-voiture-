@@ -48,17 +48,7 @@ export default function Footer({ language, setActiveCategory }) {
         <div className="footer-brand">
           <div className="logo-container">
             {/* Footer Logo */}
-            <svg className="logo-svg" viewBox="0 0 200 200" width="50" height="50">
-              <circle cx="100" cy="100" r="95" fill="#0f0f0f" stroke="url(#gold-gradient)" stroke-width="2"/>
-              <path d="M 55 100 C 60 90, 80 82, 100 82 C 115 82, 130 84, 142 90 C 147 92, 153 96, 155 102 C 152 101, 144 98, 135 100 C 125 102, 110 110, 105 110 C 95 110, 85 105, 80 105" fill="none" stroke="url(#gold-gradient)" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="128" cy="100" r="9" fill="none" stroke="url(#gold-gradient)" stroke-width="2"/>
-              <g transform="translate(68, 100)">
-                <circle cx="0" cy="0" r="9" fill="none" stroke="url(#gold-gradient)" stroke-width="2"/>
-                <path d="M 0 -8 C -4 -8, -4 -3, 0 5 C 4 -3, 4 -8, 0 -8 Z" fill="url(#gold-gradient)"/>
-              </g>
-              <text x="100" y="135" font-family="'Playfair Display', serif" font-weight="900" font-size="28" fill="url(#gold-text-grad)" text-anchor="middle" letter-spacing="1">ANAS</text>
-              <text x="100" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="10" fill="url(#gold-text-grad)" text-anchor="middle" letter-spacing="2.5">RENT CAR</text>
-            </svg>
+            <img src="/assets/image.png" alt="ANAS RENT CAR" className="logo-img" />
             <div className="brand-text">
               <span className="brand-title text-sm">ANAS</span>
               <span className="brand-subtitle text-xs">RENT CAR</span>

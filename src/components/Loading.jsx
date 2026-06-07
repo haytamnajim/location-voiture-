@@ -16,19 +16,7 @@ export default function Loading() {
   return (
     <div className="loading-overlay">
       <div className="loading-content">
-        <div className="car-animation">
-          <div className="car-body">
-            <div className="car-roof"></div>
-            <div className="car-window"></div>
-            <div className="car-wheel front"></div>
-            <div className="car-wheel back"></div>
-          </div>
-          <div className="road">
-            <div className="road-line"></div>
-            <div className="road-line"></div>
-            <div className="road-line"></div>
-          </div>
-        </div>
+        <img src="/assets/image.png" alt="ANAS RENT CAR" className="loading-logo-img" />
         <div className="loading-text">
           <span className="brand-title">ANAS</span>
           <span className="brand-subtitle">RENT CAR</span>

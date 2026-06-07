@@ -86,32 +86,7 @@ export default function Header({ language, setLanguage, theme, setTheme }) {
         <div className="container header-container">
           {/* Logo */}
           <a href="#" className="logo-container" id="logo-link" onClick={() => handleLinkClick('#home')}>
-            <svg className="logo-svg" viewBox="0 0 200 200" width="56" height="56">
-              <circle cx="100" cy="100" r="95" fill="#0f0f0f" stroke="url(#gold-gradient)" strokeWidth="2"/>
-              <defs>
-                <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stopColor="#fdf6e2" />
-                  <stop offset="30%"  stopColor="#d4af37" />
-                  <stop offset="70%"  stopColor="#aa771c" />
-                  <stop offset="100%" stopColor="#f5e5b8" />
-                </linearGradient>
-                <linearGradient id="gold-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%"   stopColor="#fdf6e2" />
-                  <stop offset="50%"  stopColor="#d4af37" />
-                  <stop offset="100%" stopColor="#aa771c" />
-                </linearGradient>
-              </defs>
-              <path d="M 55 100 C 60 90, 80 82, 100 82 C 115 82, 130 84, 142 90 C 147 92, 153 96, 155 102 C 152 101, 144 98, 135 100 C 125 102, 110 110, 105 110 C 95 110, 85 105, 80 105" fill="none" stroke="url(#gold-gradient)" strokeWidth="2.5" strokeLinecap="round"/>
-              <path d="M 142 90 L 155 83 M 155 83 L 150 83 M 155 83 L 155 88" fill="none" stroke="url(#gold-gradient)" strokeWidth="2.5" strokeLinecap="round"/>
-              <g transform="translate(68, 100)">
-                <circle cx="0" cy="0" r="9" fill="none" stroke="url(#gold-gradient)" strokeWidth="2"/>
-                <path d="M 0 -8 C -4 -8, -4 -3, 0 5 C 4 -3, 4 -8, 0 -8 Z" fill="url(#gold-gradient)"/>
-                <circle cx="0" cy="-4" r="1.5" fill="#0f0f0f"/>
-              </g>
-              <circle cx="128" cy="100" r="9" fill="none" stroke="url(#gold-gradient)" strokeWidth="2"/>
-              <text x="100" y="132" fontFamily="'Playfair Display', serif" fontWeight="900" fontSize="28" fill="url(#gold-text-grad)" textAnchor="middle" letterSpacing="1">ANAS</text>
-              <text x="100" y="152" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" fontSize="11" fill="url(#gold-text-grad)" textAnchor="middle" letterSpacing="3.5">RENT CAR</text>
-            </svg>
+            <img src="/assets/image.png" alt="ANAS RENT CAR" className="logo-img" />
             <div className="brand-text">
               <span className="brand-title">ANAS</span>
               <span className="brand-subtitle">RENT CAR</span>
