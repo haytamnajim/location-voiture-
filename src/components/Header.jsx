@@ -86,7 +86,7 @@ export default function Header({ language, setLanguage, theme, setTheme }) {
         <div className="container header-container">
           {/* Logo */}
           <a href="#" className="logo-container" id="logo-link" onClick={() => handleLinkClick('#home')}>
-            <img src="/assets/image.png" alt="ANAS RENT CAR" className="logo-img" />
+            <img src="/assets/logo.png" alt="ANAS RENT CAR" className="logo-img" />
             <div className="brand-text">
               <span className="brand-title">ANAS</span>
               <span className="brand-subtitle">RENT CAR</span>

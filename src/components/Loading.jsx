@@ -16,7 +16,7 @@ export default function Loading() {
   return (
     <div className="loading-overlay">
       <div className="loading-content">
-        <img src="/assets/image.png" alt="ANAS RENT CAR" className="loading-logo-img" />
+        <img src="/assets/logo.png" alt="ANAS RENT CAR" className="loading-logo-img" />
         <div className="loading-text">
           <span className="brand-title">ANAS</span>
           <span className="brand-subtitle">RENT CAR</span>

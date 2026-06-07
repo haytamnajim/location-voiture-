@@ -48,7 +48,7 @@ export default function Footer({ language, setActiveCategory }) {
         <div className="footer-brand">
           <div className="logo-container">
             {/* Footer Logo */}
-            <img src="/assets/image.png" alt="ANAS RENT CAR" className="logo-img" />
+            <img src="/assets/logo.png" alt="ANAS RENT CAR" className="logo-img" />
             <div className="brand-text">
               <span className="brand-title text-sm">ANAS</span>
               <span className="brand-subtitle text-xs">RENT CAR</span>

@@ -91,7 +91,7 @@ export const carFleet = [
   },
   {
     id: "dacia-streetway",
-    name: "Dacia Streetway - Noir",
+    name: "Dacia Streetway - Gris",
     category: "dacia",
     image: "assets/dacia-streetway.png",
     specs: {

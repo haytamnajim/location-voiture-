@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import SuccessModal from './components/SuccessModal';
 import Loading from './components/Loading';
+import BackToTop from './components/BackToTop';
 
 export default function App() {
   // Init language from localStorage or default to 'fr'
@@ -134,6 +135,8 @@ export default function App() {
         language={language} 
         setActiveCategory={setActiveCategory} 
       />
+
+      <BackToTop />
 
       <BookingModal 
         isOpen={isBookingOpen} 
