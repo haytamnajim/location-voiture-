@@ -6,7 +6,8 @@ const heroBackgrounds = [
   "assets/peugeot_208_black.png",
   "assets/renault_clio_5_black.png",
   "assets/dacia_logan_black.png",
-  "assets/dacia_sandero.png"
+  "assets/dacia_sandero.png",
+  "assets/dacia-streetway.png"
 ];
 
 export default function Hero({ language, onSearch }) {

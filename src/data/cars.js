@@ -88,5 +88,20 @@ export const carFleet = [
     price: 300,
     rating: "4.8 (75 avis)",
     tag: "Crossover"
+  },
+  {
+    id: "dacia-streetway",
+    name: "Dacia Streetway - Noir",
+    category: "dacia",
+    image: "assets/dacia-streetway.png",
+    specs: {
+      engine: "95 ch",
+      transmission: "Manuelle",
+      fuel: "Diesel",
+      seats: "5 Places"
+    },
+    price: 250,
+    rating: "4.7 (65 avis)",
+    tag: "Nouveau"
   }
 ];
