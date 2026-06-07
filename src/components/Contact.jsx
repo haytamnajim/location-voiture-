@@ -119,6 +119,21 @@ export default function Contact({ language }) {
 
         <div className="contact-form-card reveal delay-2">
           <h3 className="form-title">{content.formTitle}</h3>
+          
+          {/* Google Maps Embed */}
+          <div className="map-container" style={{ marginBottom: '24px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+            <iframe
+              src="https://maps.google.com/maps?q=33.6099251,-7.5135078&z=15&output=embed"
+              width="100%"
+              height="250"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="ANAS RENT CAR Location"
+            ></iframe>
+          </div>
+
           <form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="contact-name">{content.nameLabel}</label>
