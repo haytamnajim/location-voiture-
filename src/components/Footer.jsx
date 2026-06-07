@@ -68,7 +68,6 @@ export default function Footer({ language, setActiveCategory }) {
           <div className="social-links">
             <a href="#" className="social-icon" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
             <a href="#" className="social-icon" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#" className="social-icon" aria-label="Linkedin"><i className="fa-brands fa-linkedin-in"></i></a>
             <a 
               href="https://wa.me/212632230098?text=Bonjour%20ANAS%20RENT%20CAR%2C%20je%20souhaite%20me%20renseigner%20sur%20vos%20voitures%20de%20location." 
               target="_blank" 

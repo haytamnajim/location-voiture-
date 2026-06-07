@@ -2243,7 +2243,7 @@ html[dir="rtl"] .flip-back-btn {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -2261,52 +2261,63 @@ html[dir="rtl"] .flip-back-btn {
 }
 
 .booking-modal-card {
-    background: var(--bg-glass);
-    border: 1px solid var(--border-active);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px var(--gold-glow);
-    border-radius: var(--border-radius-lg);
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.98) 0%, rgba(25, 25, 25, 0.95) 100%);
+    border: 2px solid var(--border-active);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.9), 0 0 40px var(--gold-glow);
+    border-radius: 20px;
     width: 100%;
-    max-width: 950px;
-    max-height: 90vh;
+    max-width: 1000px;
+    max-height: 92vh;
     overflow-y: auto;
     position: relative;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     animation: scale-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes scale-up {
-    0% { transform: scale(0.9) translateY(20px); }
-    100% { transform: scale(1) translateY(0); }
+    0% { transform: scale(0.85) translateY(30px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
+    top: 24px;
+    right: 24px;
+    font-size: 2.2rem;
     color: var(--text-gray-muted);
-    background: transparent;
-    border: none;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .modal-close:hover {
     color: var(--gold-main);
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: rotate(90deg) scale(1.1);
 }
 
 .modal-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 0;
 }
 
 /* Modal Car Preview (Left) */
 .modal-car-preview {
-    background-color: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
     border-right: 1px solid var(--border-color);
-    padding: 40px;
+    padding: 45px;
     display: flex;
     flex-direction: column;
 }
@@ -2314,12 +2325,13 @@ html[dir="rtl"] .flip-back-btn {
 .modal-badge {
     align-self: flex-start;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    padding: 4px 12px;
+    padding: 8px 18px;
     border-radius: 50px;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(212,175,55,0.3);
 }
 
 .modal-badge.gold-bg {
@@ -2328,93 +2340,128 @@ html[dir="rtl"] .flip-back-btn {
 }
 
 .modal-car-name {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     line-height: 1.1;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    font-weight: 800;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .modal-car-category {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--gold-main);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
+    letter-spacing: 1.2px;
+    margin-bottom: 35px;
 }
 
 .modal-img-container {
-    height: 180px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+    border-radius: 16px;
+    padding: 20px;
 }
 
 .modal-img-container img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
+    transition: transform 0.3s ease;
+}
+
+.modal-img-container:hover img {
+    transform: scale(1.05);
 }
 
 .modal-specs-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 30px;
+    gap: 18px;
+    margin-bottom: 35px;
 }
 
 .modal-spec-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
+    gap: 12px;
+    font-size: 0.9rem;
     color: var(--text-gray-light);
+    padding: 12px 16px;
+    background: rgba(212,175,55,0.06);
+    border: 1px solid rgba(212,175,55,0.12);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.modal-spec-item:hover {
+    background: rgba(212,175,55,0.12);
+    border-color: rgba(212,175,55,0.25);
+    transform: translateY(-2px);
 }
 
 .modal-spec-item i {
     color: var(--gold-main);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .modal-pricing-box {
     margin-top: auto;
-    background: rgba(212,175,55,0.05);
-    border: 1px solid rgba(212,175,55,0.15);
-    padding: 16px 20px;
-    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0.05) 100%);
+    border: 1px solid rgba(212,175,55,0.25);
+    padding: 20px 24px;
+    border-radius: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 20px rgba(212,175,55,0.15);
 }
 
 .pricing-label {
     font-size: 0.85rem;
     color: var(--text-gray-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .pricing-value {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 900;
     color: var(--text-white);
 }
 
 .pricing-value .currency {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--gold-main);
+    font-weight: 700;
 }
 
 /* Modal Booking Form (Right) */
 .modal-booking-form {
-    padding: 40px;
+    padding: 45px;
 }
 
 .modal-title {
-    font-size: 1.5rem;
-    margin-bottom: 24px;
+    font-size: 1.6rem;
+    margin-bottom: 28px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-weight: 700;
+}
+
+.modal-title i {
+    color: var(--gold-main);
+    font-size: 1.3rem;
 }
 
 .group-label {
@@ -2422,9 +2469,9 @@ html[dir="rtl"] .flip-back-btn {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
     color: var(--text-gold-light);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .options-group {
@@ -2437,20 +2484,21 @@ html[dir="rtl"] .flip-back-btn {
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    padding: 12px 16px;
-    background-color: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: var(--border-radius);
+    padding: 14px 18px;
+    background-color: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
     cursor: pointer;
-    margin-bottom: 10px;
-    transition: var(--transition-fast);
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
     position: relative;
     user-select: none;
 }
 
 .option-checkbox-container:hover {
-    border-color: rgba(212,175,55,0.3);
-    background-color: rgba(212,175,55,0.02);
+    border-color: rgba(212,175,55,0.4);
+    background-color: rgba(212,175,55,0.05);
+    transform: translateX(4px);
 }
 
 .option-checkbox-container input {
@@ -2462,29 +2510,30 @@ html[dir="rtl"] .flip-back-btn {
 }
 
 .checkmark {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 4px;
+    border-radius: 6px;
     display: block;
     flex-shrink: 0;
     margin-top: 2px;
     position: relative;
-    transition: var(--transition-fast);
+    transition: all 0.3s ease;
 }
 
 .option-checkbox-container input:checked ~ .checkmark {
     background: var(--gold-gradient);
     border-color: transparent;
+    box-shadow: 0 0 10px rgba(212,175,55,0.4);
 }
 
 .checkmark::after {
     content: "";
     position: absolute;
     display: none;
-    left: 7px;
-    top: 3px;
+    left: 8px;
+    top: 4px;
     width: 5px;
     height: 10px;
     border: solid #000000;
@@ -2502,62 +2551,70 @@ html[dir="rtl"] .flip-back-btn {
 }
 
 .option-title {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-white);
 }
 
 .option-desc {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-gray-muted);
 }
 
 /* Client Detail Input Section */
 .client-details-section {
-    border-top: 1px solid rgba(255,255,255,0.05);
-    padding-top: 24px;
-    margin-bottom: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 28px;
+    margin-bottom: 28px;
 }
 
 .client-details-section input {
-    background-color: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
+    background-color: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
     color: var(--text-white);
-    padding: 12px 16px;
-    border-radius: var(--border-radius);
+    padding: 14px 18px;
+    border-radius: 10px;
     outline: none;
-    transition: var(--transition-fast);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .client-details-section input:focus {
     border-color: var(--gold-main);
-    box-shadow: 0 0 8px var(--gold-glow);
+    box-shadow: 0 0 12px var(--gold-glow);
+    background-color: rgba(255,255,255,0.06);
+}
+
+.client-details-section input::placeholder {
+    color: var(--text-gray-muted);
 }
 
 /* Price Calculator Summary */
 .price-summary-box {
-    background-color: rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
     border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: var(--border-radius);
+    padding: 24px;
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .summary-line {
     display: flex;
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-gray-muted);
+    padding: 8px 0;
 }
 
 .summary-line.total-line {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 10px;
-    margin-top: 4px;
-    font-size: 1.15rem;
-    font-weight: 700;
+    border-top: 1px solid rgba(212,175,55,0.2);
+    padding-top: 16px;
+    margin-top: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
     color: var(--text-white);
 }
 
