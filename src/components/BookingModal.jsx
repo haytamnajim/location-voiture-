@@ -125,6 +125,13 @@ export default function BookingModal({
 
   const handleClose = () => {
     onClose();
+    // Scroll to fleet section on mobile
+    if (window.innerWidth <= 768) {
+      const fleetSection = document.getElementById('fleet');
+      if (fleetSection) {
+        fleetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   const handleSubmit = (e) => {
