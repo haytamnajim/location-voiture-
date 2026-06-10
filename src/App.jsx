@@ -9,7 +9,6 @@ import CarMarquee from './components/CarMarquee';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import SuccessModal from './components/SuccessModal';
-import Loading from './components/Loading';
 import BackToTop from './components/BackToTop';
 
 export default function App() {
@@ -101,8 +100,6 @@ export default function App() {
 
   return (
     <>
-      <Loading />
-      
       <Header 
         language={language} 
         setLanguage={setLanguage} 
