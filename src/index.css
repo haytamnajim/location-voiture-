@@ -719,12 +719,28 @@ a {
     left: 0;
     width: 100%;
     z-index: 100;
-    background: linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.65) 100%);
-    backdrop-filter: blur(25px) saturate(200%);
-    -webkit-backdrop-filter: blur(25px) saturate(200%);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header-shrunk {
+    background: rgba(10, 10, 10, 0.85);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+[data-theme="light"] .header {
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .header-shrunk {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 
@@ -811,72 +827,84 @@ a {
 .brand-title.text-sm { font-size: 1.35rem; }
 .brand-subtitle.text-xs { font-size: 0.62rem; letter-spacing: 3.5px; }
 
-/* Desktop Nav links */
+/* Desktop Nav links - Glass Pill Design */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+    background: rgba(20, 20, 20, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 50px;
+    padding: 6px 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .nav-menu {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(212, 175, 55, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .nav-link {
     font-size: 0.9rem;
     font-weight: 600;
-    letter-spacing: 0.4px;
-    color: rgba(224, 224, 224, 0.8);
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.7);
     position: relative;
-    padding: 8px 16px;
+    padding: 8px 20px;
     border-radius: 50px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    overflow: hidden;
 }
 
-/* Pill hover background */
+[data-theme="light"] .nav-link {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Background pill for hover/active */
 .nav-link::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: 50px;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0), rgba(212, 175, 55, 0));
-    transition: all 0.3s ease;
-    z-index: -1;
-}
-
-/* Gold underline bar */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    border-radius: 2px;
     background: var(--gold-gradient);
-    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 0 8px rgba(212,175,55,0.5);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
 }
 
 .nav-link:hover {
     color: var(--gold-light);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+}
+
+[data-theme="light"] .nav-link:hover {
+    color: var(--gold-dark);
 }
 
 .nav-link:hover::before {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.08));
-}
-
-.nav-link:hover::after {
-    width: 60%;
+    opacity: 0.15;
 }
 
 .nav-link.active {
-    color: var(--gold-main);
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    box-shadow: 0 4px 15px rgba(212,175,55,0.2);
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-.nav-link.active::after {
-    width: 70%;
+[data-theme="light"] .nav-link.active {
+    color: #FFFFFF;
+}
+
+.nav-link.active::before {
+    opacity: 1;
+}
+
+[data-theme="light"] .nav-link.active::before {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold-main));
 }
 
 /* Nav Actions (right side) */

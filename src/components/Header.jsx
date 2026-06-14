@@ -57,17 +57,7 @@ export default function Header({ language, setLanguage, theme, setTheme }) {
 
   return (
     <>
-      <header
-        className="header"
-        style={{
-          background: isShrunk
-            ? 'rgba(5, 5, 5, 0.88)'
-            : 'rgba(10, 10, 10, 0.55)',
-          boxShadow: isShrunk
-            ? '0 8px 32px rgba(0,0,0,0.45), 0 1px 0 rgba(212,175,55,0.15)'
-            : 'none',
-        }}
-      >
+      <header className={`header ${isShrunk ? 'header-shrunk' : ''}`}>
         {/* Scroll Progress Bar */}
         <div
           style={{
