@@ -109,10 +109,9 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
               const isFlipped = !!flippedCards[car.id];
 
               return (
-                <div 
-                  key={car.id} 
+                <div
+                  key={car.id}
                   className={`car-card flip-card ${isFlipped ? 'flipped' : ''}`}
-                  onClick={(e) => toggleFlip(car.id, e)}
                   style={{
                     opacity: 1,
                     animationDelay: `${index * 80}ms`
