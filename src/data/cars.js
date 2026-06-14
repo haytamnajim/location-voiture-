@@ -12,7 +12,8 @@ export const carFleet = [
     },
     price: 300,
     rating: "4.9 (124 avis)",
-    tag: "Nouveau"
+    tag: "Nouveau",
+    facesRight: false // Set to true if this car needs flipping to face left
   },
   {
     id: "peugeot-208-black",
@@ -27,7 +28,8 @@ export const carFleet = [
     },
     price: 300,
     rating: "4.8 (85 avis)",
-    tag: "Populaire"
+    tag: "Populaire",
+    facesRight: false
   },
   {
     id: "peugeot-208-black-2",
@@ -42,7 +44,8 @@ export const carFleet = [
     },
     price: 300,
     rating: "4.8 (85 avis)",
-    tag: "Disponible"
+    tag: "Disponible",
+    facesRight: false
   },
   {
     id: "renault-clio-5",
@@ -57,7 +60,8 @@ export const carFleet = [
     },
     price: 300,
     rating: "4.8 (110 avis)",
-    tag: "Confort"
+    tag: "Confort",
+    facesRight: false
   },
   {
     id: "dacia-logan",
@@ -72,7 +76,8 @@ export const carFleet = [
     },
     price: 300,
     rating: "4.7 (96 avis)",
-    tag: "Économique"
+    tag: "Économique",
+    facesRight: false
   },
   {
     id: "dacia-sandero",
@@ -87,7 +92,8 @@ export const carFleet = [
     },
     price: 300,
     rating: "4.8 (75 avis)",
-    tag: "Crossover"
+    tag: "Crossover",
+    facesRight: true
   },
   {
     id: "dacia-streetway",
@@ -102,6 +108,7 @@ export const carFleet = [
     },
     price: 250,
     rating: "4.7 (65 avis)",
-    tag: "Nouveau"
+    tag: "Nouveau",
+    facesRight: true
   }
 ];

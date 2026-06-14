@@ -53,7 +53,12 @@ export default function CarMarquee({ language, onSelectCar }) {
                     <span></span><span></span><span></span>
                   </div>
 
-                  <img src={car.image} alt={car.name} className="marquee-car-body" />
+                  <img 
+                    src={car.image} 
+                    alt={car.name} 
+                    className="marquee-car-body"
+                    style={{ transform: car.facesRight ? 'scaleX(-1)' : 'none' }}
+                  />
                 </div>
               </div>
             ))}
