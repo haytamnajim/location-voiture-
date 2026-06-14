@@ -139,7 +139,25 @@
 }
 
 [data-theme="light"] .modal-car-preview {
-    background-color: rgba(212, 175, 55, 0.05);
+    background: linear-gradient(180deg, #FDFDFD 0%, #F3F1EB 100%);
+}
+
+[data-theme="light"] .modal-img-container {
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.15) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+[data-theme="light"] .modal-spec-item {
+    background: #FFFFFF;
+    border-color: #E8E1D1;
+    color: #111111;
+}
+
+[data-theme="light"] .modal-car-name {
+    background: var(--gold-dark);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 [data-theme="light"] .service-card {
@@ -266,7 +284,7 @@
 }
 
 [data-theme="light"] .price-summary-box {
-    background-color: rgba(212, 175, 55, 0.08);
+    background: rgba(212, 175, 55, 0.08);
     border-color: rgba(212, 175, 55, 0.2);
 }
 
