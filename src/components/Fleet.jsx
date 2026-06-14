@@ -136,7 +136,14 @@ export default function Fleet({ language, activeCategory, setActiveCategory, onS
                             <span className="price-label">{fromLabel}</span>
                             <span className="price-amount">{car.price} <span className="currency">DH/j</span></span>
                           </div>
-                          <div className="flip-hint" title={language === 'ar' ? 'عرض التفاصيل' : 'Voir les détails'}>
+                          <div
+                            className="flip-hint"
+                            title={language === 'ar' ? 'عرض التفاصيل' : 'Voir les détails'}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleFlip(car.id, e);
+                            }}
+                          >
                             <i className="fa-solid fa-rotate"></i>
                           </div>
                         </div>
