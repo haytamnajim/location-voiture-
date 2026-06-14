@@ -709,23 +709,6 @@ a {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Gold shimmer line at very top of header */
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent 0%, var(--gold-dark) 15%, var(--gold-main) 50%, var(--gold-dark) 85%, transparent 100%);
-    opacity: 0.8;
-    animation: shimmer 3s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
 
 .header-container {
     display: flex;
@@ -1079,13 +1062,24 @@ a {
 }
 
 .mobile-controls-row .theme-toggle-btn {
-    background: rgba(212, 175, 55, 0.1);
-    border-color: rgba(212, 175, 55, 0.25);
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    width: auto;
+    height: auto;
+    border-radius: 50px;
+    padding: 6px 16px;
+    color: var(--text-gold-light);
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .mobile-controls-row .theme-toggle-btn:hover {
-    background: rgba(212, 175, 55, 0.18);
-    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: none;
+    box-shadow: none;
+    color: var(--gold-main);
 }
 
 .mobile-link {
@@ -1543,10 +1537,16 @@ a {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Rotate the card on hover or flipped state */
-.car-card:hover .flip-card-inner,
+/* Rotate the card on flipped state */
 .car-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
+}
+
+/* Rotate the card on hover only for devices that support hover */
+@media (hover: hover) {
+    .car-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
 }
 
 /* Base styles for both card faces */
